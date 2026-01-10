@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Uploaded contracts (user data)
+app/storage/contracts/
+
+# OS files
+.DS_Store
