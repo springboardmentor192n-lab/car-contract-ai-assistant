@@ -1,7 +1,8 @@
-#contract upload logic file 
 from fastapi import APIRouter, UploadFile, File
 import os
 import uuid
+
+from app.services.ocr import extract_text
 
 router = APIRouter()
 
@@ -16,8 +17,12 @@ async def upload_contract(file: UploadFile = File(...)):
     with open(file_path, "wb") as f:
         f.write(await file.read())
 
+    # OCR step
+    extracted_text = extract_text(file_path)
+
     return {
-        "message": "Contract uploaded successfully",
+        "message": "Contract uploaded and OCR completed",
         "contract_id": file_id,
-        "filename": file.filename
+        "filename": file.filename,
+        "text_preview": extracted_text[:500]
     }
