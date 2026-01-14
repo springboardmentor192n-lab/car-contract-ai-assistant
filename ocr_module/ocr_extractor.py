@@ -1,17 +1,21 @@
 import easyocr
 from pdf2image import convert_from_path
-
-# Initialize EasyOCR reader (English)
+from PIL import Image
+import os
 reader = easyocr.Reader(['en'], gpu=False)
 
-def extract_text_ocr(pdf_path):
+def extract_text_ocr(file_path):
     """
-    Extracts text from scanned PDFs using EasyOCR.
+    Extracts text from scanned PDFs or image files using EasyOCR.
     """
     text = ""
 
-    # Convert PDF pages to images
-    images = convert_from_path(pdf_path)
+    file_extension = os.path.splitext(file_path)[1].lower()
+
+    if file_extension == ".pdf":
+        images = convert_from_path(file_path)
+    else:
+        images = [Image.open(file_path)]
 
     for img in images:
         results = reader.readtext(img)
