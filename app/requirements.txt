@@ -1,0 +1,21 @@
+# Web framework
+fastapi
+uvicorn
+
+# File upload handling
+python-multipart
+
+# OCR
+easyocr
+torch
+torchvision
+
+# PDF to image conversion
+pdf2image
+Pillow
+
+# Text processing
+numpy
+
+# HTTP client (for Ollama / APIs)
+requests
