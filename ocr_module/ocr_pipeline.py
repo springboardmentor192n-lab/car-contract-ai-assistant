@@ -1,23 +1,24 @@
-from .doc_type_detector import is_text_pdf
 from .pdf_text_extractor import extract_text_pdf
 from .ocr_extractor import extract_text_ocr
 from .text_cleaner import clean_text
+import os
 
 
 def run_ocr_pipeline(file_path):
     """
-    Runs the complete OCR pipeline:
-    - Detects document type
-    - Extracts text using pdfplumber or OCR
-    - Cleans the extracted text
+    Stable OCR pipeline:
+    - PDFs → pdfplumber ONLY
+    - Images → EasyOCR ONLY
     """
 
-    if is_text_pdf(file_path):
+    extension = os.path.splitext(file_path)[1].lower()
+
+    if extension == ".pdf":
         raw_text = extract_text_pdf(file_path)
-        method_used = "pdfplumber (text-based PDF)"
+        method_used = "pdfplumber (PDF)"
     else:
         raw_text = extract_text_ocr(file_path)
-        method_used = "EasyOCR (scanned PDF)"
+        method_used = "EasyOCR (image)"
 
     cleaned_text = clean_text(raw_text)
 

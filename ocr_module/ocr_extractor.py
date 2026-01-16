@@ -1,25 +1,25 @@
 import easyocr
-from pdf2image import convert_from_path
 from PIL import Image
 import os
+
 reader = easyocr.Reader(['en'], gpu=False)
 
 def extract_text_ocr(file_path):
     """
-    Extracts text from scanned PDFs or image files using EasyOCR.
+    OCR is applied ONLY for image files.
+    PDFs are NOT processed here.
     """
+
     text = ""
+    extension = os.path.splitext(file_path)[1].lower()
 
-    file_extension = os.path.splitext(file_path)[1].lower()
+    if extension not in [".jpg", ".jpeg", ".png"]:
+        return text  # Skip OCR for PDFs completely
 
-    if file_extension == ".pdf":
-        images = convert_from_path(file_path)
-    else:
-        images = [Image.open(file_path)]
+    image = Image.open(file_path)
+    results = reader.readtext(image)
 
-    for img in images:
-        results = reader.readtext(img)
-        for (_, line, _) in results:
-            text += line + " "
+    for (_, line, _) in results:
+        text += line + " "
 
     return text
