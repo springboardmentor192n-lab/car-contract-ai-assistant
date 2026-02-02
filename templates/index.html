@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Lease AI</title>
+
+  <!-- ===== CSS ===== -->
+  <style>
+    body {
+      background: #9e9e9e;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      width: 60%;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+    }
+
+    textarea {
+      width: 90%;
+      height: 100px;
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    button {
+      padding: 12px 30px;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      border: none;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #output {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 12px;
+      display: none;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Welcome to Car Lease AI</h2>
+
+  <div class="card">
+    <input type="file" id="file" accept=".pdf,.png,.jpg"><br>
+
+    <textarea id="question" placeholder="Ask something about your car lease contract..."></textarea><br>
+
+    <button onclick="send()">Analyze Contract</button>
+  </div>
+
+  <div id="output"></div>
+
+  <!-- ===== JS ===== -->
+  <script>
+    function send() {
+      const fileInput = document.getElementById("file");
+      const questionInput = document.getElementById("question");
+      const outputDiv = document.getElementById("output");
+
+      if (!fileInput.files.length || !questionInput.value) {
+        alert("Please upload a contract and enter a question.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+      formData.append("question", questionInput.value);
+
+      outputDiv.style.display = "block";
+      outputDiv.innerText = "Analyzing contract... please wait ⏳";
+
+      fetch("/analyze", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        outputDiv.innerText = data.result;
+      })
+      .catch(error => {
+        outputDiv.innerText = "Something went wrong. Check backend logs.";
+        console.error(error);
+      });
+    }
+  </script>
+
+</body>
+</html>
