@@ -1,12 +1,30 @@
-# Virtual environment
-venv/
 
-# Python cache
+# Python / Backend
+venv/
 __pycache__/
 *.pyc
+.pytest_cache/
+.mypy_cache/
+*.log
+tmp/
 
-# Uploaded contracts (user data)
-app/storage/contracts/
+# Environment variables
+.env
+.env.*
 
-# OS files
+# Uploaded user data 
+backend/app/storage/contracts/
+
+# Flutter / Frontend
+
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.metadata
+
+# OS & IDE
+
 .DS_Store
+.vscode/
+.idea/
