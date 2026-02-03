@@ -21,7 +21,6 @@ def analyze_with_gemini(text, api_key):
         response = client.models.generate_content(model=model_name, contents=prompt)
         res_text = response.text.strip()
         
-        # Robust JSON cleaning
         if "```json" in res_text:
             res_text = res_text.split("```json")[-1].split("```")[0].strip()
         elif "```" in res_text:
@@ -35,3 +34,4 @@ def analyze_with_gemini(text, api_key):
             "red_flags": [f"API Error: {str(e)}"], "mileage_limit": "N/A"
 
         }
+
