@@ -1,24 +1,28 @@
 from ocr_module.ocr_pipeline import run_ocr_pipeline
 from llm_module.local_llm import analyze_contract_locally
 import json
+from llm_module.chatbot import ask_contract_question
 
+from ocr_module.ocr_pipeline import run_ocr_pipeline
+
+from ocr_module.ocr_pipeline import run_ocr_pipeline
+from llm_module.local_llm import analyze_contract_locally
 
 def run_full_pipeline(file_path):
-    """
-    OCR → Rule-based LLM → Structured output
-    """
-
-    # Step 1: OCR
     ocr_result = run_ocr_pipeline(file_path)
-    extracted_text = ocr_result["extracted_text"]
 
-    # Step 2: LLM-style analysis
-    analysis_result = analyze_contract_locally(extracted_text)
+    structured_data = analyze_contract_locally(
+        ocr_result["extracted_text"]
+    )
 
     return {
         "ocr_method": ocr_result["method_used"],
-        "analysis_result": analysis_result
+        "text": ocr_result["extracted_text"],
+        "analysis": structured_data,
+        "raw_text": ocr_result["extracted_text"]
     }
+
+
 
 
 if __name__ == "__main__":
