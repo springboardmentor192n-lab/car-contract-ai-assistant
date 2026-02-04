@@ -84,9 +84,5 @@ if uploaded_file:
                     else:
                         st.error("Could not validate VIN with official database.")
 
-                # --- REPORT DOWNLOAD ---
-                report_text = f"AutoSLA Report\nVIN: {analysis.get('vin')}\nPayment: {analysis.get('monthly_payment')}"
-                st.download_button("📥 Download Audit Report", report_text, file_name="Report.txt")
-
 else:
     st.info("👋 Welcome! Please upload a contract in the sidebar to begin.")
