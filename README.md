@@ -1,4 +1,4 @@
-Car Contract AI Assistant
+Car Contract AI Assistant ( Yash )
 
 An AI-powered system designed to analyze car lease agreements using OCR, Large Language Models (LLMs), VIN validation, and an interactive chatbot interface.
 
