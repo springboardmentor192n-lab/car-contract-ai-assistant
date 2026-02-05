@@ -3,6 +3,30 @@ import re
 import copy
 
 
+PROMPT_TEMPLATE = """
+You are a strict contract analysis assistant.
+
+IMPORTANT INSTRUCTIONS:
+- Only extract risks that are EXPLICITLY mentioned in the contract text.
+- Do NOT assume or guess.
+- If the contract does NOT mention excess mileage fee, do NOT include it.
+- If no risk is found, return an empty list.
+- Do NOT generate generic risks.
+
+Contract Text:
+{contract_text}
+
+Return ONLY valid JSON in this format:
+
+{{
+  "risk_flags": [],
+  "missing_or_unclear_clauses": []
+}}
+"""
+
+
+
+
 def analyze_contract_locally(contract_text):
     """
     Rule-based contract analysis (NO hallucination).
@@ -11,8 +35,9 @@ def analyze_contract_locally(contract_text):
     text = contract_text.lower()
     text = re.sub(r'\s+', ' ', text)  # removes line breaks and extra spaces
     result = copy.deepcopy(LEASE_CONTRACT_SCHEMA)
+    result["risk_flags"] = []
+    result["missing_or_unclear_clauses"] = []
     text = contract_text.lower()
-
     # ---------------- VEHICLE DETAILS ----------------
 
     # VIN
@@ -97,29 +122,24 @@ def analyze_contract_locally(contract_text):
         result["purchase_option"]["buyout_price"]["value"] = buyout.group(1) + buyout.group(2)
 
     # ---------------- RISK FLAGS ----------------
+    # ---------------- RISK FLAGS (Rule-based) ----------------
+
+    if "excess mileage" in text:
+        result["risk_flags"].append("Excess mileage fee is mentioned in the contract.")
 
     if "early termination" in text:
-        result["risk_flags"].append(
-            "Early termination may involve financial penalties."
-        )
+        result["risk_flags"].append("Early termination clause present.")
 
-    if "late fee" in text or "penalty" in text:
-        result["risk_flags"].append(
-            "Late payment penalties apply if dues are delayed."
-        )
+    if "late payment" in text:
+        result["risk_flags"].append("Late payment penalties are mentioned.")
+
+    # ---------------- MISSING CLAUSES ----------------
+
+    if not result["purchase_option"]["buyout_available"]["value"]:
+        result["missing_or_unclear_clauses"].append("Purchase option terms are unclear.")
 
     if "insurance" not in text:
-        result["risk_flags"].append(
-            "Insurance responsibility not clearly mentioned."
-        )
+        result["missing_or_unclear_clauses"].append("Insurance responsibilities not explicitly stated.")
 
-    # ---------------- MISSING FIELDS ----------------
-
-    for section in ["lease_terms", "mileage_terms", "penalties_and_fees"]:
-        for key in result[section]:
-            if result[section][key]["value"] == "":
-                result["missing_or_unclear_clauses"].append(
-                    f"{key.replace('_', ' ').title()} not specified in contract."
-                )
 
     return result

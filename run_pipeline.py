@@ -1,12 +1,7 @@
 from ocr_module.ocr_pipeline import run_ocr_pipeline
 from llm_module.local_llm import analyze_contract_locally
-import json
 from llm_module.chatbot import ask_contract_question
-
-from ocr_module.ocr_pipeline import run_ocr_pipeline
-
-from ocr_module.ocr_pipeline import run_ocr_pipeline
-from llm_module.local_llm import analyze_contract_locally
+import json
 
 def run_full_pipeline(file_path):
     ocr_result = run_ocr_pipeline(file_path)
@@ -32,4 +27,6 @@ if __name__ == "__main__":
     print(result["ocr_method"])
 
     print("\n--- Contract Analysis Output ---")
-    print(json.dumps(result["analysis_result"], indent=4, ensure_ascii=False))
+    print(json.dumps(result["analysis"], indent=4, ensure_ascii=False))
+    print("Analysis keys:", result["analysis"].keys())
+    print("Risk flags type:", type(result["analysis"]["risk_flags"]))
