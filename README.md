@@ -1,119 +1,120 @@
 Car Contract AI Assistant ( Yash )
 
-An AI-powered system designed to analyze car lease agreements using OCR, Large Language Models (LLMs), VIN validation, and an interactive chatbot interface.
+A production-oriented AI system for automated analysis of car lease agreements using OCR, Large Language Models, VIN validation, and an interactive question-answering interface.
 
-Project Overview
+Overview
 
-The Car Contract AI Assistant automates the review and understanding of car lease agreements by:
+Car Contract AI Assistant is designed to reduce manual effort in reviewing vehicle lease agreements by transforming unstructured contract documents into structured, explainable insights.
 
-Extracting text from PDFs and scanned documents using OCR
+The system performs document ingestion, semantic contract analysis, vehicle identity verification, and conversational querying through a single unified interface.
 
-Analyzing contract clauses with a Large Language Model
+Core Capabilities
+Document Ingestion and OCR
 
-Detecting and validating vehicle VIN details
+Processes both digital and scanned lease agreements
 
-Allowing users to ask contract-related questions through a chatbot
+Supports PDF, JPG, and PNG formats
 
-The system follows a modular architecture and is implemented as a web application using Streamlit.
+Robust text extraction using pdfplumber and Tesseract OCR
 
-Key Features
-OCR Pipeline
+Intelligent Contract Analysis
 
-Supports both text-based and scanned PDFs
+High-level contract summarization
 
-Handles image formats such as JPG and PNG
+Automated extraction of lease duration, payment terms, and obligations
 
-Built using pdfplumber and Tesseract OCR
+Identification of high-risk or ambiguous clauses
 
-LLM-Based Contract Analysis
+Context-aware improvement and negotiation suggestions
 
-Automatic contract summarization
+VIN Extraction and Verification
 
-Detection of lease duration and payment details
+Automatic detection of Vehicle Identification Number (VIN)
 
-Identification of potentially risky clauses
+Real-time validation using the NHTSA VIN Decoder API
 
-Suggestions for negotiation and improvements
+Vehicle metadata verification against official records
 
-VIN Detection and Validation
+Contract Question-Answering
 
-Automatic extraction of VIN from contracts
+Natural language interaction with contract content
 
-Vehicle detail validation using the NHTSA VIN Decoder API
+Context-preserving responses powered by a local LLM via Ollama
 
-Contract Chatbot
+Eliminates the need to manually search contract clauses
 
-Natural language question-answering on contract content
+Web-Based User Interface
 
-Powered by a local LLM using Ollama
+Interactive Streamlit application
 
-Interactive User Interface
+Clearly separated analysis modules for transparency
 
-Web-based UI built with Streamlit
+Real-time feedback and results visualization
 
-Separate sections for OCR output, AI analysis, VIN validation, and chatbot
+Technology Stack
 
-Tech Stack
+Language: Python
 
-Programming Language: Python
+OCR: pdfplumber, pytesseract, pdf2image, Pillow
 
-OCR Tools: pdfplumber, pytesseract, pdf2image, Pillow
+Large Language Model: Ollama (LLaMA 3 – Local)
 
-LLM: Ollama (LLaMA 3 – Local)
-
-UI Framework: Streamlit
+Frontend: Streamlit
 
 External API: NHTSA VIN Decoder
 
-Version Control: Git and GitHub
+Version Control: Git, GitHub
 
-Project Structure
+System Architecture
 car-contract-ai-assistant/
 │
-├── app.py              # Streamlit UI
-├── ocr_pipeline.py     # OCR logic
-├── llm_analysis.py     # LLM-based contract analysis
-├── chatbot.py          # Contract Q&A chatbot
-├── vin_api.py          # VIN validation via API
+├── app.py              # Streamlit application layer
+├── ocr_pipeline.py     # Document OCR and preprocessing
+├── llm_analysis.py     # Semantic contract analysis engine
+├── chatbot.py          # Conversational contract assistant
+├── vin_api.py          # VIN extraction and validation
 ├── requirements.txt
 └── README.md
 
-How to Run the Project
-Step 1: Install Dependencies
+Execution Guide
+Dependency Installation
 pip install -r requirements.txt
 
-Step 2: Run the Streamlit Application
+Application Startup
 streamlit run app.py
 
-Step 3: Upload a car lease agreement (PDF or image) and start analysis
-Current Status
+Usage
 
-OCR pipeline completed
+Upload a car lease agreement (PDF or image) to receive structured insights, verified vehicle details, and conversational explanations.
 
-LLM-based contract analysis implemented
+Project Status
 
-VIN validation integrated
+OCR pipeline implemented and stable
 
-Contract chatbot functionality added
+Contract analysis module integrated with LLM
 
-UI and chatbot interaction improvements are ongoing
+VIN detection and validation operational
 
-Internship Context
+Chatbot interaction functional
 
-This project was developed as part of the Infosys Springboard – AI/ML Internship Program, with a focus on:
+UI refinements and conversational improvements in progress
 
-Applied Artificial Intelligence
+Academic and Internship Context
 
-Modular system design
+Developed under the Infosys Springboard – AI/ML Internship Program, emphasizing:
 
-End-to-end AI application development
+Applied Artificial Intelligence systems
 
-Future Enhancements
+Scalable modular design
 
-End-to-end negotiation chatbot workflow
+Real-world document intelligence workflows
 
-Risk scoring mechanism for contracts
+Roadmap
 
-Database integration for contract storage
+Multi-step negotiation chatbot flows
 
-Improved UI/UX and response persistence
+Quantitative risk scoring for lease contracts
+
+Persistent storage and contract history tracking
+
+Enhanced UI/UX and response memory
