@@ -1,71 +1,64 @@
-Car Contract AI Assistant ( Yash )
+# 🚗 Car Contract AI Assistant
 
-A production-oriented AI system for automated analysis of car lease agreements using OCR, Large Language Models, VIN validation, and an interactive question-answering interface.
+> **Developer:** Yash Jajoria  
+> A production-oriented AI system for automated analysis of car lease agreements using OCR, Large Language Models, VIN validation, and an interactive question-answering interface.
 
-Overview
+---
 
-Car Contract AI Assistant is designed to reduce manual effort in reviewing vehicle lease agreements by transforming unstructured contract documents into structured, explainable insights.
+## 📋 Overview
+
+**Car Contract AI Assistant** is designed to reduce manual effort in reviewing vehicle lease agreements by transforming unstructured contract documents into structured, explainable insights.
 
 The system performs document ingestion, semantic contract analysis, vehicle identity verification, and conversational querying through a single unified interface.
 
-Core Capabilities
-Document Ingestion and OCR
+---
 
-Processes both digital and scanned lease agreements
+## ✨ Core Capabilities
 
-Supports PDF, JPG, and PNG formats
+### 📄 Document Ingestion and OCR
+- Processes both digital and scanned lease agreements
+- Supports **PDF**, **JPG**, and **PNG** formats
+- Robust text extraction using **pdfplumber** and **Tesseract OCR**
 
-Robust text extraction using pdfplumber and Tesseract OCR
+### 🧠 Intelligent Contract Analysis
+- High-level contract summarization
+- Automated extraction of lease duration, payment terms, and obligations
+- Identification of high-risk or ambiguous clauses
+- Context-aware improvement and negotiation suggestions
 
-Intelligent Contract Analysis
+### 🔍 VIN Extraction and Verification
+- Automatic detection of Vehicle Identification Number (VIN)
+- Real-time validation using the **NHTSA VIN Decoder API**
+- Vehicle metadata verification against official records
 
-High-level contract summarization
+### 💬 Contract Question-Answering
+- Natural language interaction with contract content
+- Context-preserving responses powered by a local LLM via **Ollama**
+- Eliminates the need to manually search contract clauses
 
-Automated extraction of lease duration, payment terms, and obligations
+### 🌐 Web-Based User Interface
+- Interactive **Streamlit** application
+- Clearly separated analysis modules for transparency
+- Real-time feedback and results visualization
 
-Identification of high-risk or ambiguous clauses
+---
 
-Context-aware improvement and negotiation suggestions
+## 🛠️ Technology Stack
 
-VIN Extraction and Verification
+| Category | Technology |
+|----------|-----------|
+| **Language** | Python |
+| **OCR** | pdfplumber, pytesseract, pdf2image, Pillow |
+| **Large Language Model** | Ollama (LLaMA 3 – Local) |
+| **Frontend** | Streamlit |
+| **External API** | NHTSA VIN Decoder |
+| **Version Control** | Git, GitHub |
 
-Automatic detection of Vehicle Identification Number (VIN)
+---
 
-Real-time validation using the NHTSA VIN Decoder API
+## 🏗️ System Architecture
 
-Vehicle metadata verification against official records
-
-Contract Question-Answering
-
-Natural language interaction with contract content
-
-Context-preserving responses powered by a local LLM via Ollama
-
-Eliminates the need to manually search contract clauses
-
-Web-Based User Interface
-
-Interactive Streamlit application
-
-Clearly separated analysis modules for transparency
-
-Real-time feedback and results visualization
-
-Technology Stack
-
-Language: Python
-
-OCR: pdfplumber, pytesseract, pdf2image, Pillow
-
-Large Language Model: Ollama (LLaMA 3 – Local)
-
-Frontend: Streamlit
-
-External API: NHTSA VIN Decoder
-
-Version Control: Git, GitHub
-
-System Architecture
+```
 car-contract-ai-assistant/
 │
 ├── app.py              # Streamlit application layer
@@ -73,48 +66,79 @@ car-contract-ai-assistant/
 ├── llm_analysis.py     # Semantic contract analysis engine
 ├── chatbot.py          # Conversational contract assistant
 ├── vin_api.py          # VIN extraction and validation
-├── requirements.txt
-└── README.md
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+```
 
-Execution Guide
-Dependency Installation
+---
+
+## 🚀 Execution Guide
+
+### 1️⃣ Dependency Installation
+
+```bash
 pip install -r requirements.txt
+```
 
-Application Startup
+### 2️⃣ Application Startup
+
+```bash
 streamlit run app.py
+```
 
-Usage
+### 3️⃣ Usage
 
-Upload a car lease agreement (PDF or image) to receive structured insights, verified vehicle details, and conversational explanations.
+Upload a car lease agreement (PDF or image) to receive:
+- ✅ Structured insights
+- ✅ Verified vehicle details
+- ✅ Conversational explanations
 
-Project Status
+---
 
-OCR pipeline implemented and stable
+## 📊 Project Status
 
-Contract analysis module integrated with LLM
+| Feature | Status |
+|---------|--------|
+| OCR pipeline | ✅ Implemented and stable |
+| Contract analysis module | ✅ Integrated with LLM |
+| VIN detection and validation | ✅ Operational |
+| Chatbot interaction | ✅ Functional |
+| UI refinements | 🔄 In progress |
 
-VIN detection and validation operational
+---
 
-Chatbot interaction functional
+## 🎓 Academic and Internship Context
 
-UI refinements and conversational improvements in progress
+Developed under the **Infosys Springboard – AI/ML Internship Program**, emphasizing:
 
-Academic and Internship Context
+- 🤖 Applied Artificial Intelligence systems
+- 📐 Scalable modular design
+- 📑 Real-world document intelligence workflows
 
-Developed under the Infosys Springboard – AI/ML Internship Program, emphasizing:
+---
 
-Applied Artificial Intelligence systems
+## 🗺️ Roadmap
 
-Scalable modular design
+- [ ] Multi-step negotiation chatbot flows
+- [ ] Quantitative risk scoring for lease contracts
+- [ ] Persistent storage and contract history tracking
+- [ ] Enhanced UI/UX and response memory
 
-Real-world document intelligence workflows
+---
 
-Roadmap
+## 📝 License
 
-Multi-step negotiation chatbot flows
+This project is developed as part of an educational internship program.
 
-Quantitative risk scoring for lease contracts
+---
 
-Persistent storage and contract history tracking
+## 👤 Contact
 
-Enhanced UI/UX and response memory
+**Yash Jajoria**  
+*AI/ML Intern - Infosys Springboard Program*
+
+---
+
+<div align="center">
+  <strong>Built with ❤️ using Python, Streamlit, and LLaMA 3</strong>
+</div>
