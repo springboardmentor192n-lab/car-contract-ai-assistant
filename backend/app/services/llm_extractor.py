@@ -1,26 +1,16 @@
 # app/services/llm_extractor.py
-def build_extraction_prompt(contract_text: str) -> str:
-    """
-    Prompt to extract SLA fields from a car lease contract.
-    """
-    return f"""
-You are an expert automotive contract analysis assistant.
+# app/services/llm_extractor.py
+print("✅ LOADED llm_extractor.py FROM:", __file__)
 
-Your task is to extract structured information from a car lease agreement.
+import json
+import requests
+import sys
+import os
 
-INSTRUCTIONS:
-- Extract ONLY the fields defined in the JSON schema below.
-- If a field is not present, leave its value as an empty string.
-- Do NOT guess or infer missing information.
-- Return ONLY valid JSON.
-- Do NOT include explanations or extra text.
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-JSON SCHEMA:
-{SLA_SCHEMA}
-
-CAR LEASE CONTRACT TEXT:
-{contract_text}
-"""
+OLLAMA_URL = "http://localhost:11434/api/generate"
+MODEL_NAME = "llama3.2"
 
 SLA_SCHEMA = {
     "interest_rate_apr": {"value": "", "notes": ""},
@@ -42,11 +32,43 @@ SLA_SCHEMA = {
     "penalties_or_late_fees": {"summary": ""}
 }
 
+
+def build_extraction_prompt(contract_text: str) -> str:
+    return f"""
+You are an expert automotive contract analysis assistant.
+
+Extract structured information from the car lease contract below.
+
+STRICT RULES:
+- Return ONLY valid JSON
+- Follow the schema exactly
+- Do NOT hallucinate
+- Leave missing values as empty strings
+- Do NOT add explanations
+
+JSON SCHEMA:
+{json.dumps(SLA_SCHEMA, indent=2)}
+
+CAR LEASE CONTRACT TEXT:
+{contract_text}
+"""
+
+
 def call_llm(prompt: str) -> str:
-    """
-    Calls an LLM with the given prompt.
-    """
-    raise NotImplementedError("LLM integration not implemented yet")
+    payload = {
+        "model": MODEL_NAME,
+        "prompt": prompt,
+        "stream": False,
+        "options": {
+            "temperature": 0,
+            "num_predict": 1200
+        }
+    }
+
+    response = requests.post(OLLAMA_URL, json=payload, timeout=180)
+    response.raise_for_status()
+
+    return response.json()["response"]
 
 
 def parse_llm_response(response_text: str) -> dict:
@@ -60,3 +82,4 @@ def extract_contract_sla(cleaned_text: str) -> dict:
     prompt = build_extraction_prompt(cleaned_text)
     llm_response = call_llm(prompt)
     return parse_llm_response(llm_response)
+
