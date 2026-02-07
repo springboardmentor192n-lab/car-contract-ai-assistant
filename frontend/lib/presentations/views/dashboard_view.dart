@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/presentations/widgets/feature_card.dart';
+import 'upload_contract_view.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -44,7 +45,14 @@ class DashboardView extends StatelessWidget {
                     title: "Upload Contract",
                     subtitle: "Analyze car lease agreements using AI",
                     icon: Icons.upload_file,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const UploadContractView(),
+                        ),
+                      );
+                    },
                   ),
                   FeatureCard(
                     title: "SLA Analysis",
