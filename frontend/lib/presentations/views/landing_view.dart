@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/presentations/widgets/primary_button.dart';
+import 'package:lottie/lottie.dart';
 import '../bindings/app_routes.dart';
+import 'package:lottie/lottie.dart';
 
-class LandingView extends StatelessWidget {
+class LandingView extends StatefulWidget {
   const LandingView({super.key});
+
+  @override
+  State<LandingView> createState() => _LandingViewState();
+}
+
+class _LandingViewState extends State<LandingView> {
+  bool animate = false;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 300), () {
+      setState(() => animate = true);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +29,7 @@ class LandingView extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF020617), Color(0xFF020617), Color(0xFF020617)],
+            colors: [Color(0xFF020617), Color(0xFF020617)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -20,62 +37,92 @@ class LandingView extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 60),
 
-              // HERO TITLE
-              const Text(
-                "LeaseWise AI",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
+              /// 🔹 ANIMATED HERO TEXT
+              AnimatedSlide(
+                offset: animate ? Offset.zero : const Offset(0, 0.2),
+                duration: const Duration(milliseconds: 700),
+                curve: Curves.easeOut,
+                child: AnimatedOpacity(
+                  opacity: animate ? 1 : 0,
+                  duration: const Duration(milliseconds: 700),
+                  child: Column(
+                    children: const [
+                      Text(
+                        "LeaseWise AI",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        "Understand your car lease.\nBefore you sign.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
-              const Text(
-                "Understand your car lease.\nBefore you sign.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.w600,
-                  height: 1.3,
+              /// 🔹 SUBTITLE
+              AnimatedOpacity(
+                opacity: animate ? 1 : 0,
+                duration: const Duration(milliseconds: 900),
+                child: const Text(
+                  "AI-powered contract analysis, VIN verification,\n"
+                  "and smart negotiation assistance.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 16,
+                    height: 1.5,
+                  ),
                 ),
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 32),
 
-              const Text(
-                "AI-powered contract analysis, VIN verification,\n"
-                "and smart negotiation assistance — all in one place.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 16,
-                  height: 1.5,
-                ),
-              ),
-
-              const SizedBox(height: 40),
-
-              // CTA BUTTON
+              /// 🔹 LOTTIE ANIMATION
               SizedBox(
-                width: 200,
-                child: PrimaryButton(
-                  title: "Get Started",
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.dashboard);
-                  },
+                height: 220,
+                child: Lottie.asset(
+                  "assets/animations/Robot Futuristic Ai animated.json",
+                  repeat: true,
+                ),
+              ),
+
+              const SizedBox(height: 32),
+
+              /// 🔹 CTA BUTTON
+              AnimatedScale(
+                scale: animate ? 1 : 0.9,
+                duration: const Duration(milliseconds: 500),
+                child: SizedBox(
+                  width: 220,
+                  child: PrimaryButton(
+                    title: "Get Started",
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.dashboard);
+                    },
+                  ),
                 ),
               ),
 
               const SizedBox(height: 60),
 
-              // FEATURE HIGHLIGHTS ROW
+              /// 🔹 FEATURE HIGHLIGHTS
               Wrap(
                 spacing: 24,
                 runSpacing: 16,
@@ -87,40 +134,36 @@ class LandingView extends StatelessWidget {
                   ),
                   _HighlightItem(
                     icon: Icons.directions_car,
-                    label: "VIN-Based Insights",
+                    label: "VIN Intelligence",
                   ),
                   _HighlightItem(
                     icon: Icons.trending_up,
-                    label: "Fair Deal Benchmarking",
+                    label: "Price Benchmarking",
                   ),
                 ],
               ),
 
               const SizedBox(height: 80),
 
-              // FEATURE CARDS
-              _FeatureCard(
+              /// 🔹 FEATURE CARDS (STAGGERED FEEL)
+              const _FeatureCard(
                 title: "Smart Lease Analysis",
                 description:
-                    "Automatically extract interest rates, lease terms, mileage limits, penalties, and hidden clauses from car lease agreements.",
+                    "Extract interest rates, lease terms, mileage limits, penalties, and hidden clauses automatically.",
                 icon: Icons.analytics,
               ),
-
               const SizedBox(height: 24),
-
-              _FeatureCard(
+              const _FeatureCard(
                 title: "VIN & Vehicle Intelligence",
                 description:
-                    "Decode VINs using official NHTSA data to verify vehicle specifications, manufacturer details, and recall history.",
+                    "Verify vehicle specifications, manufacturer details, and recall history using official data.",
                 icon: Icons.verified,
               ),
-
               const SizedBox(height: 24),
-
-              _FeatureCard(
+              const _FeatureCard(
                 title: "Negotiation Assistant",
                 description:
-                    "Get AI-generated negotiation points and email suggestions based on your lease terms and real-world market benchmarks.",
+                    "Get AI-powered negotiation strategies based on market benchmarks and contract terms.",
                 icon: Icons.chat,
               ),
 
