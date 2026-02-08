@@ -2,6 +2,7 @@ import pdfplumber
 import pytesseract
 from PIL import Image
 
+# Configuration for Windows
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 def get_text_from_file(uploaded_file):
@@ -13,5 +14,4 @@ def get_text_from_file(uploaded_file):
             img = Image.open(uploaded_file)
             return pytesseract.image_to_string(img)
     except Exception as e:
-
         return f"OCR Error: {str(e)}"
