@@ -36,7 +36,7 @@ class Sidebar extends StatelessWidget {
           ),
           SidebarItem(
             icon: Icons.chat,
-            label: "Contract Chat",
+            label: "AI Negotiator Assistant",
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.contractChat);
             },

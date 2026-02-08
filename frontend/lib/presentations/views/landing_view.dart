@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/presentations/widgets/feature_card.dart';
 import 'package:frontend/presentations/widgets/primary_button.dart';
 import 'package:lottie/lottie.dart';
 import '../bindings/app_routes.dart';
-import 'package:lottie/lottie.dart';
 
 class LandingView extends StatefulWidget {
   const LandingView({super.key});
@@ -146,21 +146,21 @@ class _LandingViewState extends State<LandingView> {
               const SizedBox(height: 80),
 
               /// 🔹 FEATURE CARDS (STAGGERED FEEL)
-              const _FeatureCard(
+              const FeatureCard(
                 title: "Smart Lease Analysis",
                 description:
                     "Extract interest rates, lease terms, mileage limits, penalties, and hidden clauses automatically.",
                 icon: Icons.analytics,
               ),
               const SizedBox(height: 24),
-              const _FeatureCard(
+              const FeatureCard(
                 title: "VIN & Vehicle Intelligence",
                 description:
                     "Verify vehicle specifications, manufacturer details, and recall history using official data.",
                 icon: Icons.verified,
               ),
               const SizedBox(height: 24),
-              const _FeatureCard(
+              const FeatureCard(
                 title: "Negotiation Assistant",
                 description:
                     "Get AI-powered negotiation strategies based on market benchmarks and contract terms.",
@@ -193,58 +193,6 @@ class _HighlightItem extends StatelessWidget {
         const SizedBox(width: 8),
         Text(label, style: const TextStyle(color: Colors.white70)),
       ],
-    );
-  }
-}
-
-class _FeatureCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final IconData icon;
-
-  const _FeatureCard({
-    required this.title,
-    required this.description,
-    required this.icon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: const Color(0xFF020617),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white12),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, color: Colors.white, size: 28),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: const TextStyle(color: Colors.white70, height: 1.4),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

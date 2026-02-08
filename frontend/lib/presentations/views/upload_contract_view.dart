@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:frontend/services/api_service.dart';
+import 'package:frontend/presentations/widgets/primary_button.dart';
 import 'contract_analysis_view.dart';
 
 class UploadContractView extends StatefulWidget {
@@ -19,6 +20,7 @@ class _UploadContractViewState extends State<UploadContractView> {
       allowedExtensions: ['pdf', 'jpg', 'png'],
       type: FileType.custom,
     );
+
     if (result != null) {
       setState(() {
         file = result.files.single;
@@ -28,6 +30,7 @@ class _UploadContractViewState extends State<UploadContractView> {
 
   Future<void> upload() async {
     if (file == null) return;
+
     setState(() => loading = true);
 
     try {
@@ -40,7 +43,6 @@ class _UploadContractViewState extends State<UploadContractView> {
         ),
       );
     } catch (e) {
-      print("Upload error: $e");
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text("Upload failed: $e")));
@@ -56,22 +58,26 @@ class _UploadContractViewState extends State<UploadContractView> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ElevatedButton.icon(
-              icon: const Icon(Icons.upload_file),
-              label: const Text("Select Contract"),
+            PrimaryButton(
+              title: "Select Contract File",
+              icon: Icons.upload_file,
               onPressed: pickFile,
             ),
+
             if (file != null) ...[
               const SizedBox(height: 12),
               Text(file!.name, style: const TextStyle(color: Colors.white70)),
             ],
+
             const Spacer(),
-            ElevatedButton(
-              onPressed: loading ? null : upload,
-              child: loading
-                  ? const CircularProgressIndicator()
-                  : const Text("Analyze Contract"),
+
+            PrimaryButton(
+              title: "Analyze Contract",
+              icon: Icons.analytics,
+              loading: loading,
+              onPressed: upload,
             ),
           ],
         ),

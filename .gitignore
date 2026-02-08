@@ -28,3 +28,5 @@ frontend/.metadata
 .DS_Store
 .vscode/
 .idea/
+
+.ollama/

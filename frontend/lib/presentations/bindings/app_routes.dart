@@ -21,7 +21,7 @@ class AppRoutes {
     dashboard: (context) => const DashboardView(),
     uploadContract: (context) => const UploadContractView(),
     contractAnalysis: (context) => const ContractAnalysisView(slaData: null),
-    contractChat: (context) => const ContractChatView(),
+    contractChat: (context) => const ContractChatView(contractData: {}),
     priceEstimation: (context) => const PriceEstimationView(),
     vinLookup: (context) => const VinLookupView(),
   };

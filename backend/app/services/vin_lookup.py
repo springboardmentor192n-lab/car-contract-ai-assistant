@@ -4,8 +4,6 @@ def get_comprehensive_vin_data(vin: str) -> dict:
     vehicle_info = decode_vin(vin)
     recalls = get_vehicle_recalls(vin)
 
-    # Mock additional data since public APIs are limited
-    # In a real app, use paid services like Carfax for accidents, service reports, odometer discrepancies
     mock_accidents = [
         {
             "date": "2022-05-15",

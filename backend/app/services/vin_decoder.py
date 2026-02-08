@@ -25,7 +25,7 @@ def get_vehicle_recalls(vin: str) -> list:
     url = f"https://vpic.nhtsa.dot.gov/api/vehicles/GetRecallsByVIN/{vin}?format=json"
     response = requests.get(url)
 
-    # Handle 404 errors gracefully - VIN might not have recalls
+    
     if response.status_code == 404:
         return []
 
