@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/presentations/views/contract_chat_view.dart';
 import 'package:frontend/presentations/widgets/feature_card.dart';
 import 'upload_contract_view.dart';
+import 'price_estimation_view.dart';
+import 'vin_lookup_view.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -8,9 +11,7 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("LeaseWise AI"),
-      ),
+      appBar: AppBar(title: const Text("LeaseWise AI")),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -64,19 +65,41 @@ class DashboardView extends StatelessWidget {
                     title: "VIN Lookup",
                     subtitle: "Decode VIN & verify vehicle details",
                     icon: Icons.directions_car,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const VinLookupView(),
+                        ),
+                      );
+                    },
                   ),
                   FeatureCard(
                     title: "Price Estimation",
                     subtitle: "Check fair lease & purchase pricing",
                     icon: Icons.attach_money,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const PriceEstimationView(),
+                        ),
+                      );
+                    },
                   ),
                   FeatureCard(
                     title: "Negotiation Assistant",
                     subtitle: "Get AI-powered negotiation tips",
                     icon: Icons.chat,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              const ContractChatView(contractData: {}),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

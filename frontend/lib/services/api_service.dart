@@ -41,5 +41,67 @@ class ApiService {
     return json.decode(body);
   }
 
-  // (Later) Chat endpoint will be added here
+  //chatbot implementation
+  static Future<String> chatWithContract({
+    required Map<String, dynamic> slaData,
+    required String question,
+  }) async {
+    final response = await http.post(
+      Uri.parse("$baseUrl/api/chat"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"sla_data": slaData, "question": question}),
+    );
+
+    print("Chat response status: ${response.statusCode}");
+    print("Chat response body: ${response.body}");
+
+    if (response.statusCode != 200) {
+      throw Exception("Chat request failed");
+    }
+
+    final decoded = jsonDecode(response.body);
+    return decoded["answer"];
+  }
+
+  //price estimator implementation
+  static Future<Map<String, dynamic>> getPriceEstimate({
+    String? vin,
+    String? make,
+    String? model,
+    int? year,
+  }) async {
+    final response = await http.post(
+      Uri.parse("$baseUrl/api/price-estimate"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
+        "vin": vin,
+        "make": make,
+        "model": model,
+        "year": year,
+      }),
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception("Price estimation failed");
+    }
+
+    return jsonDecode(response.body);
+  }
+
+  //price chat implementation
+  static Future<Map<String, dynamic>> getPriceChatEstimate({
+    required String vin,
+  }) async {
+    final response = await http.post(
+      Uri.parse("$baseUrl/api/price-chat"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"vin": vin}),
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception("Price chat estimation failed");
+    }
+
+    return jsonDecode(response.body);
+  }
 }
