@@ -5,3 +5,6 @@ Pillow
 google-genai
 requests
 python-dotenv
+pandas
+numpy
+google-generativeai
