@@ -3,9 +3,9 @@ import 'contract_chat_view.dart';
 import 'package:frontend/presentations/widgets/info_card.dart';
 
 class ContractAnalysisView extends StatelessWidget {
-  final Map<String, dynamic> slaData;
+  final Map<String, dynamic>? slaData;
 
-  const ContractAnalysisView({super.key, required this.slaData});
+  const ContractAnalysisView({super.key, this.slaData});
 
   @override
   Widget build(BuildContext context) {
@@ -20,30 +20,30 @@ class ContractAnalysisView extends StatelessWidget {
                 children: [
                   InfoCard(
                     title: "Interest Rate / APR",
-                    value: (slaData["interest_rate_apr"]?["value"] ?? "N/A")
+                    value: (slaData?["interest_rate_apr"]?["value"] ?? "N/A")
                         .toString(),
                   ),
                   InfoCard(
                     title: "Lease Duration",
-                    value: (slaData["lease_term_duration"]?["value"] ?? "N/A")
+                    value: (slaData?["lease_term_duration"]?["value"] ?? "N/A")
                         .toString(),
                   ),
                   InfoCard(
                     title: "Monthly Payment",
-                    value: (slaData["monthly_payment"]?["value"] ?? "N/A")
+                    value: (slaData?["monthly_payment"]?["value"] ?? "N/A")
                         .toString(),
                   ),
                   InfoCard(
                     title: "Mileage Allowance",
                     value:
-                        (slaData["mileage_allowance"]?["allowed_miles_per_year"] ??
+                        (slaData?["mileage_allowance"]?["allowed_miles_per_year"] ??
                                 "N/A")
                             .toString(),
                   ),
                   InfoCard(
                     title: "Early Termination",
                     value:
-                        (slaData["early_termination_clause"]?["summary"] ??
+                        (slaData?["early_termination_clause"]?["summary"] ??
                                 "N/A")
                             .toString(),
                   ),

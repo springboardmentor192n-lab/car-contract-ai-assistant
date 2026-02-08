@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../services/api_service.dart';
 
 class ContractChatView extends StatefulWidget {
-  final Map<String, dynamic> contractData;
+  final Map<String, dynamic>? contractData;
 
-  const ContractChatView({super.key, required this.contractData});
+  const ContractChatView({super.key, this.contractData});
 
   @override
   State<ContractChatView> createState() => _ContractChatViewState();
@@ -28,7 +28,7 @@ class _ContractChatViewState extends State<ContractChatView> {
 
     try {
       final answer = await ApiService.chatWithContract(
-        slaData: widget.contractData,
+        slaData: widget.contractData ?? {},
         question: question,
       );
 
