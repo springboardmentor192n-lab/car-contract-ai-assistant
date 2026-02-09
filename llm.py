@@ -50,8 +50,8 @@ def retrieve(query, k=5):
 
 
 # ---------- LLM ----------
-
-
+os.environ["HF_TOKEN"]
+HF_TOKEN="place your token here"
 
 client = InferenceClient(
     provider="featherless-ai",
