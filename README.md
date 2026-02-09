@@ -160,13 +160,4 @@ This produces a **Fairness Score (0–100)** shown in the dashboard to help user
 
 ---
 
-# ⭐ Acknowledgements
-
-* Google Gemini AI
-* NHTSA Vehicle API
-* Streamlit Community
-* Open‑source OCR tools
-
----
-
 **AutoSLA — Making car contracts transparent using AI.** 🚗✨
