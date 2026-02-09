@@ -14,29 +14,28 @@
     }
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .card {
       background: white;
       width: 60%;
-      margin: auto;
+      margin: 20px auto;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    input[type="file"] {
-      margin: 15px 0;
-    }
-
-    textarea {
+    input, textarea {
       width: 90%;
-      height: 100px;
-      margin: 15px 0;
+      margin: 12px 0;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
+    }
+
+    textarea {
+      height: 100px;
       resize: none;
     }
 
@@ -48,47 +47,59 @@
       border-radius: 25px;
       cursor: pointer;
       font-size: 16px;
+      margin-top: 10px;
     }
 
     button:hover {
       opacity: 0.9;
     }
 
-    #output {
-      margin-top: 30px;
-      background: white;
-      padding: 20px;
-      width: 60%;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 12px;
-      display: none;
+    .output {
+      margin-top: 20px;
+      background: #f7f7f7;
+      padding: 15px;
+      border-radius: 10px;
       white-space: pre-wrap;
       text-align: left;
+      display: none;
     }
   </style>
 </head>
 
 <body>
 
-  <h2>Welcome to Car Lease AI</h2>
+  <h2> Car Lease AI Assistant</h2>
 
+  <!-- ===== CONTRACT ANALYSIS ===== -->
   <div class="card">
-    <input type="file" id="file" accept=".pdf,.png,.jpg"><br>
+    <h3> Contract Analysis</h3>
 
-    <textarea id="question" placeholder="Ask something about your car lease contract..."></textarea><br>
+    <input type="file" id="file" accept=".pdf,.png,.jpg">
+
+    <textarea id="question" placeholder="Ask something about your car lease contract..."></textarea>
 
     <button onclick="send()">Analyze Contract</button>
+
+    <div id="contractOutput" class="output"></div>
   </div>
 
-  <div id="output"></div>
+  <!-- ===== VIN LOOKUP ===== -->
+  <div class="card">
+    <h3> VIN Lookup</h3>
+
+    <input id="vinInput" placeholder="Enter VIN number (17 characters)">
+
+    <button onclick="lookupVIN()">Fetch Vehicle Details</button>
+
+    <div id="vinOutput" class="output"></div>
+  </div>
 
   <!-- ===== JS ===== -->
   <script>
     function send() {
       const fileInput = document.getElementById("file");
       const questionInput = document.getElementById("question");
-      const outputDiv = document.getElementById("output");
+      const outputDiv = document.getElementById("contractOutput");
 
       if (!fileInput.files.length || !questionInput.value) {
         alert("Please upload a contract and enter a question.");
@@ -100,19 +111,46 @@
       formData.append("question", questionInput.value);
 
       outputDiv.style.display = "block";
-      outputDiv.innerText = "Analyzing contract... please wait ⏳";
+      outputDiv.innerText = "Analyzing contract... ⏳";
 
       fetch("/analyze", {
         method: "POST",
         body: formData
       })
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         outputDiv.innerText = data.result;
       })
-      .catch(error => {
-        outputDiv.innerText = "Something went wrong. Check backend logs.";
-        console.error(error);
+      .catch(err => {
+        outputDiv.innerText = "Error analyzing contract.";
+        console.error(err);
+      });
+    }
+
+    function lookupVIN() {
+      const vin = document.getElementById("vinInput").value;
+      const outputDiv = document.getElementById("vinOutput");
+
+      if (!vin) {
+        alert("Please enter a VIN number.");
+        return;
+      }
+
+      outputDiv.style.display = "block";
+      outputDiv.innerText = "Fetching vehicle data... 🚘";
+
+      fetch("/vin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ vin })
+      })
+      .then(res => res.json())
+      .then(data => {
+        outputDiv.innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        outputDiv.innerText = "Error fetching VIN data.";
+        console.error(err);
       });
     }
   </script>
