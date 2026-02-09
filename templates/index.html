@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Contract Analysis System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Car Contract Analysis System</h1>
+            <p class="subtitle">Upload a lease or loan contract (PDF or image) to extract text and get AI analysis.</p>
+        </header>
+
+        <!-- Upload form: single page, file input + submit -->
+        <section class="upload-section">
+            <h2>Upload Contract</h2>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label for="file">Choose a file (PDF, JPG, or PNG):</label>
+                <input type="file" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                <button type="submit">Analyze Contract</button>
+            </form>
+        </section>
+
+        <!-- Show error if any -->
+        {% if error %}
+        <section class="error-section">
+            <p class="error-message">{{ error }}</p>
+        </section>
+        {% endif %}
+
+        <!-- Section 1: OCR extracted text -->
+        {% if ocr_text is not none %}
+        <section class="result-section">
+            <h2>Extracted OCR Text</h2>
+            <div class="text-box ocr-text">
+                <pre>{{ ocr_text }}</pre>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Section 2: Gemini analysis results -->
+        {% if analysis %}
+        <section class="result-section">
+            <h2>Contract Analysis (Gemini)</h2>
+            <div class="analysis-box">
+                <h3>Structured Contract Details</h3>
+
+                {# Make the main points easy to understand for the user #}
+                {% set d = analysis.contract_details %}
+
+                {% if d.error %}
+                    <p><strong>Analysis problem:</strong> {{ d.error }}</p>
+                {% else %}
+                    <div class="details-grid">
+                        <div class="detail-row">
+                            <span class="detail-label">Agreement type</span>
+                            <span class="detail-value">{{ d.agreement_type or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Monthly payment</span>
+                            <span class="detail-value">{{ d.monthly_payment or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Interest rate / APR</span>
+                            <span class="detail-value">{{ d.interest_rate_apr or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Lease / loan duration</span>
+                            <span class="detail-value">{{ d.lease_loan_duration or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Mileage limit</span>
+                            <span class="detail-value">{{ d.mileage_limit or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Penalties</span>
+                            <span class="detail-value">{{ d.penalties or "Not found" }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Early termination clause</span>
+                            <span class="detail-value">{{ d.early_termination_clause or "Not found" }}</span>
+                        </div>
+                    </div>
+
+                    <h4>JSON view (for developers)</h4>
+                    <pre class="json-display">{{ d | tojson(indent=2) }}</pre>
+                {% endif %}
+            </div>
+            <div class="risk-box risk-{{ analysis.risk_level | lower }}">
+                <h3>Contract Fairness Score: {{ analysis.fairness_score }}/100</h3>
+                <p><strong>Risk Level:</strong> {{ analysis.risk_level }}</p>
+                <p>{{ analysis.risk_notes }}</p>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+LOAN AGREEMENT
+This Loan Agreement (“Agreement”) is made on this date between the Lender and Borrower.
+VEHICLE DETAILS:
+- Make: Porsche
+- Model: Cayenne
+- Mileage: 88,200
+- VIN: WP1AA2A29ELA03917
+- Title Status: Clean (DE)
+- Location: Rehoboth Beach, DE 19971
+- Seller: reamyphoto
+- Engine: 3.6L V6
+- Drivetrain: 4WD/AWD
+- Transmission: Manual (6-Speed)
+- Body Style: SUV/Crossover
+- Exterior Color: Jet Green Metallic
+- Interior Color: Luxor Beige
+- Auction Ending: December 16th at 2:54 AM
+- High Bid: $14,469
+- Bids: 9
+- Comments: 81
+LOAN TERMS:
+Loan Amount: $14,469
+Down Payment: $2,000
+Interest Rate: 7.2% per annum
+Loan Start Date: January 20, 2026
+Loan End Date: January 20, 2031
+
+Repayment Schedule: Monthly EMI of $285 for 60 months
+Residual Value: Not found
+Mileage Allowance & Overage: 12,000 miles/year, $0.25 per mile over limit
+Borrower Name: Michael Turner
+Lender Name: Infosys Auto Finance Division
+
+SERVICE LEVEL AGREEMENT (SLA)
+SLA Coverage:
+The lender agrees to offer full loan account management, EMI processing, customer support,
+digital portal access, and annual financial documentation.
+Response Times:
+- General Support: Within 24 hours (business days)
+- Statement Delivery: Within 48 hours
+- EMI-related issues: Resolved within 72 hours
+- Portal Downtime: Backup portal activated within 2 hours
+Resolution Commitments:
+- Payment Failures: 48–72 hours
+- Contract Clarification: 4–6 business days
+- Personal Details/Address Update: Completed within 48 hours
+Escalation Matrix:
+Level 1 fi Support Desk
+Level 2 fi Loan Operations Lead
+Level 3 fi Finance Manager
+Level 4 fi Director – Auto Finance & Compliance
+System Performance:
+- Customer Portal Uptime: 99.7% yearly target
+- Maintenance Alerts: 48-hour prior notice
+- Emergency Maintenance: Notified within 2 hours of activation
+
+ADDITIONAL SLA CLAUSES
+Late Payment Policy:
+- Grace Period: 5 days
+- Late Fee: $40 per missed EMI
+- Additional Penalty: 2% per EMI beyond 30 days overdue
+Early Loan Closure:
+- Permitted after 6 months
+- Foreclosure Fee: 1.25% of remaining principal amount
+Insurance Requirements:
+- Borrower must maintain comprehensive insurance coverage
+- Annual proof of insurance mandatory for loan continuity
+Maintenance & Usage:
+- Borrower must maintain the vehicle under manufacturer standards
+- Neglect-based failures exempt from SLA servicing
+Termination & Default:
+- EMI non-payment for 75 consecutive days results in loan default
+- Vehicle repossession may begin according to Delaware state laws
+Data Privacy:
+Infosys Auto Finance ensures secure data handling under U.S. federal data protection laws.
+AGREEMENT ACCEPTANCE
+SIGNATURES:
+___________________________
+Lender (Infosys Auto Finance Division)
+
+___________________________
+Borrower (Michael Turner)
