@@ -91,7 +91,7 @@ Then open the browser link shown in terminal (usually **http://localhost:8501**)
 
 ---
 
-# 🧪 How It Works
+# How It Works
 
 ### Step 1 — Upload Contract
 
