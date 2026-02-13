@@ -144,13 +144,15 @@ This project is developed as part of an educational internship program.
 </div>
 
 
+<img width="2312" height="685" alt="image" src="https://github.com/user-attachments/assets/2eb84138-ed6f-44fd-b3f9-13a258213863" />
 
 
-<img width="2402" height="1140" alt="image" src="https://github.com/user-attachments/assets/8e0b89a3-72c9-4e79-9ceb-a5174af2c48b" />
+<img width="2368" height="1116" alt="image" src="https://github.com/user-attachments/assets/176e34ee-682c-402c-8c57-82761c819764" />
 
-  <img width="2418" height="1100" alt="image" src="https://github.com/user-attachments/assets/88f85640-a29c-452a-b5f7-a5001e7ce33a" />
-  
-  <img width="1766" height="1066" alt="image" src="https://github.com/user-attachments/assets/05fbf5b5-6dc4-4b4a-bc9b-e7c784bb6fdf" />
+
+<img width="2205" height="1149" alt="image" src="https://github.com/user-attachments/assets/bbda36b5-fbfc-4b89-9562-cc85e671f482" />
+
+
 
 
 
