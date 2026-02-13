@@ -6,6 +6,12 @@ AutoSLA extracts text from vehicle lease/loan contracts, analyzes financial & ri
 
 ---
 
+## 🌐 Live Demo
+
+**[https://autosla.streamlit.app](https://autosla.streamlit.app)**
+
+---
+
 # ✨ Features
 
 * 📄 **OCR Extraction** from PDF and image contracts
