@@ -163,3 +163,51 @@ Example:
 [Upload Interface](screenshots/ex1.png)
 [Upload Interface](screenshots/vin_verify.png)
 [Chatbot Interface](screenshots/chatbot.png)
+
+---
+## ⚠️ Challenges Faced
+
+Handling OCR inconsistencies from scanned images
+
+Managing memory limitations for local LLM models
+
+Preventing hallucination in chatbot responses
+
+Improving RAG retrieval accuracy
+
+Handling different contract formats
+
+Maintaining deterministic extraction reliability
+--- 
+
+## 📉 Limitations
+
+Performance depends on document quality
+
+Small local models may misinterpret complex clauses
+
+Retrieval accuracy varies based on chunking
+
+Does not replace legal advice
+
+Limited by local hardware constraints
+---
+
+## 📈 Future Enhancements
+
+Risk severity scoring system
+
+Negotiation suggestion engine
+
+Clause comparison across multiple contracts
+
+Cloud deployment with larger LLM
+
+Automatic contract summary generator
+
+Financial impact calculator
+---
+
+## ⚖ Disclaimer
+
+This system provides AI-assisted analysis for informational purposes only. It does not constitute legal or financial advice. Users should consult a qualified professional before making financial decisions.
