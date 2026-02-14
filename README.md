@@ -159,6 +159,7 @@ Example:
 ## 📸 Screenshots & Demo
 
 ### Screenshots
-
-Please upload screenshots inside a folder named:
 [Upload Interface](screenshots/upload.png)
+[Upload Interface](screenshots/ex1.png)
+[Upload Interface](screenshots/vin_verify.png)
+[Chatbot Interface](screenshots/chatbot.png)
