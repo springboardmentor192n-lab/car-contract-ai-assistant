@@ -1,100 +1,164 @@
 # 🚗 Car Contract AI Assistant
 
-An AI-powered car lease contract analysis system that extracts key clauses from lease agreements (PDF or image), highlights financial risks, validates VIN using the NHTSA API, and allows users to interact with the contract through a chatbot interface.
+An AI-powered contract analysis system designed to help users understand car lease agreements before signing. The system extracts key clauses, highlights risks, verifies VIN details using a government API, and provides a conversational chatbot interface for interactive contract understanding.
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Objective
 
-This system processes lease agreements and:
+Car lease and loan contracts are often complex and difficult to understand. This project aims to:
 
-- Extracts structured contract data
-- Identifies potential financial risks
-- Detects missing or unclear clauses
-- Verifies Vehicle Identification Number (VIN) via NHTSA API
-- Provides an interactive chatbot interface
-
-The system is built with a modular and explainable architecture to ensure reliability and avoid hallucinated outputs.
-
----
-## 📑 Features
-- Upload PDFs or Images of car lease contracts.
-- OCR Extraction using Tesseract or other OCR engines.
-- Structured Data Extraction with regex rules for:
-    - Vehicle details (VIN, brand, model, year)
-    - Lease terms (monthly payment, duration, deposit)
-    - Mileage limits and excess fees
-    - Penalties and buyout options
-- LLM‑based Risk Analysis:
-    - Flags risky clauses (e.g., vague obligations, hidden fees).
-    - Detects missing or unclear clauses (e.g., insurance, maintenance).
-- VIN Verification via NHTSA API.
-- Interactive Q&A Chatbot to answer contract‑specific questions.
-- Streamlit UI for a clean, user‑friendly experience.
+- Simplify contract language
+- Extract important financial terms
+- Identify risky clauses
+- Highlight missing or unclear information
+- Allow users to ask natural language questions about their contract
+- Increase user confidence before signing
 
 ---
-## 🏗️ System Architecture
+
+## 🧠 Core Functionality
+
+### 1️⃣ Document Upload & OCR Processing
+
+Users can upload:
+- PDF contracts
+- Image-based contracts (JPG, PNG)
+
+The system:
+- Uses **pdfplumber** for text-based PDFs
+- Uses **EasyOCR** for scanned images
+- Converts the document into machine-readable text
+
+---
+
+### 2️⃣ Structured Contract Extraction
+
+The system extracts:
+
+#### Vehicle Details
+- VIN (Vehicle Identification Number)
+- Brand / Manufacturer
+- Model
+- Year
+
+#### Lease Terms
+- Lease duration (months)
+- Monthly payment
+- Security deposit
+- Down payment
+
+#### Mileage Terms
+- Annual mileage limit
+- Excess mileage charges
+
+#### Penalties & Fees
+- Late payment fee
+- Early termination fee
+
+#### Purchase Option
+- Buyout availability
+- Buyout price
+
+Each field includes a simple explanation for user clarity.
+
+---
+
+### 3️⃣ Risk & Missing Clause Detection
+
+The system analyzes contract text to identify:
+
+- Financial risk clauses
+- Early termination penalties
+- Excess mileage fees
+- Missing purchase option details
+- Unclear insurance responsibilities
+
+This ensures users are aware of potential risks.
+
+---
+
+### 4️⃣ VIN Verification (NHTSA API Integration)
+
+If a VIN is detected:
+
+- The system validates it using the official **NHTSA VIN API**
+- Confirms manufacturer
+- Confirms model year
+- Provides external validation layer
+
+This adds real-world credibility and reduces fraud risk.
+
+---
+
+### 5️⃣ Contract-Aware Chatbot (RAG Architecture)
+
+The chatbot allows users to ask questions such as:
+
+- "What is the lease duration?"
+- "How much is the security deposit?"
+- "Is there a late payment fee?"
+- "Is the vehicle under warranty?"
+- "Is this car safe to buy?"
+
+The system uses a Retrieval-Augmented Generation (RAG) architecture:
+
+1. Contract text is chunked
+2. Relevant sections are retrieved
+3. Local LLM (via Ollama) generates grounded responses
+4. If information is missing, it clearly states so
+
+The chatbot answers only from the contract content to prevent hallucination.
+
+---
+
+## 🏗 System Architecture
 
 User Upload
 ↓
 OCR Layer (pdfplumber / EasyOCR)
 ↓
-Structured Extraction (Rule-Based Regex)
+Text Cleaning
 ↓
-Risk & Clause Analysis
+Structured Extraction
+↓
+Risk & Missing Clause Detection
 ↓
 VIN Verification (NHTSA API)
 ↓
-Chatbot Interface (Structured QA)
+RAG-based Chatbot
 ↓
 Streamlit UI
+
 ---
 
-## 🛠️ Technologies Used
+## 🛠 Technologies Used
 
 - Python
 - Streamlit
 - pdfplumber
 - EasyOCR
-- Regex-based structured extraction
+- Regex-based extraction
+- FAISS (vector search)
+- sentence-transformers (embeddings)
+- Ollama (Local LLM)
 - NHTSA VIN API
 - Git & GitHub
 
---- 
-## 🚀 How to Run
-
-### 1. Clone Repository
-
-git clone <your-repo-url>
-cd car-contract-ai-assistant
-
-
-### 2. Install Dependencies
-
-pip install -r requirements.txt
-
-
-### 3. Run Application
-
-streamlit run app.py
 ---
 
-## 🔍 Design Philosophy
+## 🚀 Deployment
 
-- Deterministic extraction for reliability
-- No hallucinated financial data
-- Modular architecture
-- API-based external validation
-- Extendable to negotiation assistant
+🔗 **Live Deployment Link:**  
+_(Add your deployed Streamlit link here — mandatory)_
+
+Example:
 
 ---
 
-## 📈 Future Scope
+## 📸 Screenshots & Demo
 
-- Automated negotiation suggestions
-- Risk severity scoring
-- Clause comparison between contracts
-- Full LLM-based RAG chatbot
-- Deployment on cloud platform
+### Screenshots
 
----
+Please upload screenshots inside a folder named:
+[Upload Interface](screenshots/upload.png)

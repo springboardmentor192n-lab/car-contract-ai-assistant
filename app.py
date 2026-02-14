@@ -136,7 +136,7 @@ if st.session_state.contract_text:
 
     if question:
         answer = ask_contract_question(
-            st.session_state.analysis,
+            st.session_state.contract_text,
             question
         )
 
