@@ -1,101 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Car Lease AI</title>
+<meta charset="UTF-8">
+<title>Car AI Assistant</title>
 
-  <!-- ===== CSS ===== -->
-  <style>
-    body {
-      background: #9e9e9e;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 40px;
-    }
+<style>
+html { scroll-behavior: smooth; }
 
-    h2 {
-      margin-bottom: 20px;
-    }
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-    .card {
-      background: white;
-      width: 60%;
-      margin: 20px auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px 40px;
+  z-index: 1000;
+}
 
-    input, textarea {
-      width: 90%;
-      margin: 12px 0;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+.navbar button {
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-    textarea {
-      height: 100px;
-      resize: none;
-    }
+.dropdown {
+  display: none;
+  margin-top: 10px;
+  text-align: right;
+}
 
-    button {
-      padding: 12px 30px;
-      background: linear-gradient(to right, #ff512f, #dd2476);
-      border: none;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-    }
+.dropdown a {
+  display: block;
+  margin: 8px 0;
+  text-decoration: none;
+  color: white;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
 
-    .output {
-      margin-top: 20px;
-      background: #f7f7f7;
-      padding: 15px;
-      border-radius: 10px;
-      white-space: pre-wrap;
-      text-align: left;
-      display: none;
-    }
-  </style>
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  opacity: 0.85;
+}
+
+/* SECTIONS */
+.section {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+}
+
+input, textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button.action {
+  padding: 12px 30px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button.action:hover {
+  background: #1d4ed8;
+}
+
+.output {
+  margin-top: 20px;
+  display: none;
+  white-space: pre-wrap;
+  text-align: left;
+}
+</style>
 </head>
 
 <body>
 
-  <h2> Car Lease AI Assistant</h2>
+<div class="navbar">
+  <button onclick="toggleMenu()">Menu</button>
+  <div id="menuOptions" class="dropdown">
+    <a href="#contract">Contract Analysis</a>
+    <a href="#vin">VIN Lookup</a>
+  </div>
+</div>
 
-  <!-- ===== CONTRACT ANALYSIS ===== -->
+<section class="hero">
+  <h1>Car AI Assistant</h1>
+  <p>
+    Analyze lease contracts intelligently and retrieve vehicle details instantly.
+    Built to simplify complex paperwork using AI.
+  </p>
+</section>
+
+<section id="contract" class="section">
+  <h2>Contract Analysis</h2>
   <div class="card">
-    <h3> Contract Analysis</h3>
-
     <input type="file" id="file" accept=".pdf,.png,.jpg">
-
-    <textarea id="question" placeholder="Ask something about your car lease contract..."></textarea>
-
-    <button onclick="send()">Analyze Contract</button>
-
+    <textarea id="question" placeholder="Ask something about your contract..."></textarea>
+    <button class="action" onclick="send()">Analyze</button>
     <div id="contractOutput" class="output"></div>
   </div>
+</section>
 
-  <!-- ===== VIN LOOKUP ===== -->
+<section id="vin" class="section">
+  <h2>VIN Lookup</h2>
   <div class="card">
-    <h3> VIN Lookup</h3>
-
     <input id="vinInput" placeholder="Enter VIN number (17 characters)">
-
-    <button onclick="lookupVIN()">Fetch Vehicle Details</button>
-
+    <button class="action" onclick="lookupVIN()">Fetch Details</button>
     <div id="vinOutput" class="output"></div>
   </div>
-
+</section>
   <!-- ===== JS ===== -->
   <script>
+    function toggleMenu() {
+    const menu = document.getElementById("menuOptions");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+     }
     function send() {
       const fileInput = document.getElementById("file");
       const questionInput = document.getElementById("question");
@@ -137,7 +196,7 @@
       }
 
       outputDiv.style.display = "block";
-      outputDiv.innerText = "Fetching vehicle data... 🚘";
+      outputDiv.innerText = "Fetching vehicle data... ";
 
       fetch("/vin", {
         method: "POST",
