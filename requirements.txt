@@ -10,8 +10,8 @@ easyocr
 torch
 torchvision
 
-# PDF to image conversion
-pdf2image
+# PDF processing
+PyMuPDF
 Pillow
 
 # Text processing

@@ -20,7 +20,7 @@ class _VinLookupViewState extends State<VinLookupView> {
     messages.add({
       "role": "ai",
       "text":
-          "Hello! I'm your AI vehicle assistant. Please provide the VIN number to get comprehensive vehicle details including manufacturer info, recall history, registration details, and more.",
+          "Hello! I'm your AI vehicle assistant. Please provide the VIN number to get official NHTSA vehicle information including manufacturer details, specifications, and recall history.",
     });
   }
 
@@ -65,7 +65,7 @@ class _VinLookupViewState extends State<VinLookupView> {
 
     // Vehicle Info
     final vehicleInfo = vinData['vehicle_info'];
-    response += "Vehicle Details:\n";
+    response += "📋 Vehicle Details:\n";
     response += "Make: ${vehicleInfo['make'] ?? 'N/A'}\n";
     response += "Model: ${vehicleInfo['model'] ?? 'N/A'}\n";
     response += "Year: ${vehicleInfo['year'] ?? 'N/A'}\n";
@@ -73,62 +73,26 @@ class _VinLookupViewState extends State<VinLookupView> {
 
     // Recalls
     final recalls = vinData['recalls'];
-    if (recalls.isNotEmpty) {
-      response += "Recall History (${recalls.length}):\n";
+    if (recalls != null && recalls.isNotEmpty) {
+      response += "⚠️ Recall History (${recalls.length}):\n";
       for (var recall in recalls.take(3)) {
-        response += "- ${recall['Component']}: ${recall['Summary']}\n";
+        final component = recall['Component'] ?? 'Unknown';
+        final summary = recall['Summary'] ?? 'No details available';
+        response += "- $component: $summary\n";
       }
-      if (recalls.length > 3)
+      if (recalls.length > 3) {
         response += "...and ${recalls.length - 3} more\n\n";
-    } else {
-      response += "No recalls found.\n\n";
-    }
-
-    // Accidents (Mock data - explained below)
-    final accidents = vinData['accidents'];
-    if (accidents.isNotEmpty) {
-      response += "Reported Accidents:\n";
-      for (var accident in accidents) {
-        response +=
-            "- ${accident['date']}: ${accident['description']} (${accident['severity']})\n";
+      } else {
+        response += "\n";
       }
-      response += "\n";
     } else {
-      response += "No reported accidents found.\n\n";
+      response += "✅ No recalls found.\n\n";
     }
 
-    // Service Reports (Mock data)
-    final serviceReports = vinData['service_reports'];
-    if (serviceReports.isNotEmpty) {
-      response += "Service History:\n";
-      for (var service in serviceReports.take(2)) {
-        response +=
-            "- ${service['date']}: ${service['service']} (${service['mileage']} miles)\n";
-      }
-      response += "\n";
-    } else {
-      response += "No service history available.\n\n";
+    // Add note about data limitations
+    if (vinData['note'] != null) {
+      response += "ℹ️ Note:\n${vinData['note']}\n";
     }
-
-    // Odometer Discrepancies (Mock data)
-    final odometerDiscrepancies = vinData['odometer_discrepancies'];
-    if (odometerDiscrepancies.isNotEmpty) {
-      response += "Odometer Discrepancies:\n";
-      for (var discrepancy in odometerDiscrepancies) {
-        response +=
-            "- Reported: ${discrepancy['reported_mileage']}, Actual: ${discrepancy['actual_mileage']} (Diff: ${discrepancy['discrepancy']})\n";
-      }
-      response += "\n";
-    } else {
-      response += "No odometer discrepancies found.\n\n";
-    }
-
-    // Registration
-    final registration = vinData['registration_details'];
-    response += "Registration Details:\n";
-    response += "Status: ${registration['status']}\n";
-    response += "Expires: ${registration['expiration_date']}\n";
-    response += "Owner: ${registration['owner']}\n";
 
     return response;
   }
