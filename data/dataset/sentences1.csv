@@ -1,0 +1,406 @@
+sentence,label
+the emi comprises of principal and interest,INTEREST
+interest is calculated on the basis of monthly rests at the applicable rate,INTEREST
+interest rate means the rate at which the bank shall compute and apply interest on the loan as stated in the schedule,INTEREST
+the emi includes the interest component,INTEREST
+interest and applicable taxes on the loan shall be borne by the borrower,INTEREST
+the borrower must pay interest and applicable taxes on the loan,INTEREST
+the emi is towards repayment of principal and interest,INTEREST
+interest on the loan shall be applied at the fixed rate of interest as stipulated in the schedule,INTEREST
+the interest rate shall remain fixed for the entire tenor of the loan,INTEREST
+the emi comprises repayment of principal and payment of interest,INTEREST
+interest is calculated based on the applicable interest rate and repayment periodicity,INTEREST
+the installments comprise of principal and interest calculated on the basis of reducing balance of principal at the applicable interest rate,INTEREST
+the interest payable by the borrower shall be subject to changes in interest rates made by the rbi from time to time,INTEREST
+the bank may revise the rate of interest based on its internal policy and the revised rate shall be payable by the borrower,INTEREST
+in such case the revised rate of interest shall be applicable.,INTEREST
+the borrower shall pay a fixed rate of interest as specified in the schedule,INTEREST
+the bank may revise the rate of interest on the date of disbursement depending on the prevailing reference rate,INTEREST
+the rate of interest shall be the fixed rate as referred to in the schedule,INTEREST
+the interest rate mentioned in the schedule is valid as on the date of this agreement,INTEREST
+the bank may revise the rate of interest on the date of disbursement and the revised rate shall be applicable,INTEREST
+the installments comprise repayment of principal and payment of interest,INTEREST
+the installments may be payable monthly bimonthly quarterly half yearly yearly or at such other intervals as specified in the schedule,INTEREST
+dues include interest and interest tax payable on the loan,INTEREST
+for loans with tenure up to three years the interest rate shall be calculated based on the mclr corresponding to the loan tenure,INTEREST
+if monthly interest is not paid the bank may debit and capitalize the interest amount to the loan account,INTEREST
+capitalized interest shall be treated as a fresh loan and shall carry interest,INTEREST
+provided that the interest payable by the borrower shall be subject to the changes in the interest rates made by the reserve bank of india and or the bank from time to time.,INTEREST
+the borrower shall pay minimum interest equal to three months interest on the sanctioned limit,INTEREST
+the borrower shall pay interest at the rate and periodicity as mentioned in the schedule,INTEREST
+interest shall be calculated at the applicable rate with monthly rests,INTEREST
+the interest rate (apr) shall be the rate specified in the schedule at which the bank computes interest on the loan and may be amended from time to time,INTEREST
+the borrower agrees to pay interest on the loan at the rate and rests specified in the schedule,INTEREST
+interest in the emi shall be calculated based on the applicable interest rate and periodicity,INTEREST
+the bank may change the interest rate by giving notice to the borrower and shall thereafter charge interest at the revised rate,INTEREST
+interest shall be calculated at monthly rests,INTEREST
+interest in the emi shall be calculated on the basis of monthly rests at the applicable rate,INTEREST
+in such case the revised interest rate shall apply,INTEREST
+for the additional loan the borrower shall pay interest at a fixed rate as specified in the sanction letter,INTEREST
+the interest rate may be fixed or floating and changes in interest rates shall be communicated by letter or email,INTEREST
+for the first loan the borrower shall pay interest at a fixed rate as specified in the schedule,INTEREST
+the bank may revise the interest rate on the date of disbursement based on the prevailing reference rate,INTEREST
+"the reference rate for interest may be the base rate, mclr or any other rate permitted by law or rbi and may be changed by the bank from time to time",INTEREST
+interest shall be charged at the applicable rate per annum with monthly or quarterly rests and may be revised by the bank from time to time based on the base rate,INTEREST
+no reset interest rate (for loans with tenor 36 months) effective rate of interest,INTEREST
+date of reset of interest,INTEREST
+rate of interest % per annum,INTEREST
+effective annualised interest rate,INTEREST
+periodicity of interest compounding,INTEREST
+roi type fixed or floating,INTEREST
+method of computation of interest rate,INTEREST
+the emi includes payment of interest calculated on the basis of the interest rate apr,INTEREST
+interest at 18% per annum.,INTEREST
+interest shall be calculated on a reducing balance basis on the outstanding principal amount,INTEREST
+the applicable interest rate shall be the benchmark rate plus a spread as determined by the bank,INTEREST
+the interest rate shall be reset every twelve months based on the prevailing benchmark rate,INTEREST
+unpaid interest shall be capitalized and added to the principal amount of the loan,INTEREST
+the loan shall carry a floating rate of interest linked to the mclr,INTEREST
+the loan shall carry a fixed rate of interest for the entire tenure of the agreement,INTEREST
+interest shall accrue from the date of disbursement of the loan until full repayment,INTEREST
+the effective rate of interest may differ from the nominal rate due to compounding,INTEREST
+the bank may revise the interest rate in case of changes in regulatory or market conditions,INTEREST
+interest shall be compounded on a monthly basis at the applicable rate,INTEREST
+the borrower shall pay additional interest on overdue amounts at the rate specified in the schedule,INTEREST
+the interest rate applicable to the loan shall be communicated to the borrower in the sanction letter,INTEREST
+the interest shall be calculated on the outstanding balance and not on the original principal amount,INTEREST
+the interest rate shall remain fixed for the first twenty four months and may be revised thereafter,INTEREST
+the interest payable by the borrower shall be subject to periodic reset as per the bank policy,INTEREST
+the interest rate is 6.9 percent per annum,INTEREST
+,
+,
+,
+,
+,
+the monthly payment is 820 dollars,PAYMENT
+the security deposit is 1500 dollars,PAYMENT
+the down payment is 4000 dollars,PAYMENT
+the acquisition fee is 395 dollars,PAYMENT
+the total amount due at signing is 5895 dollars,PAYMENT
+payments are due monthly,PAYMENT
+the monthly lease payment is 289 dollars,PAYMENT
+the security deposit is 450 dollars,PAYMENT
+the initial down payment is 1200 dollars,PAYMENT
+payments must be made on the 5th of each month,PAYMENT
+the buyout price at lease end is 7950 dollars,PAYMENT
+the purchase option fee is 75 dollars,PAYMENT
+the total purchase amount is 8025 dollars,PAYMENT
+the base monthly rental is 36500,PAYMENT
+the finance charge component is 7200,PAYMENT
+the processing fee is 12000,PAYMENT
+the total due at signing is 158500,PAYMENT
+payments are due monthly on the due date,PAYMENT
+payment is due on or before the 10th day of each month,PAYMENT
+the borrower shall repay the loan in equated monthly installments as mentioned in the schedule,PAYMENT
+the bank is entitled to debit all amounts due and payable by the borrower to the loan account,PAYMENT
+the loan shall be repaid by the borrower to the bank,PAYMENT
+the loan is repayable by way of equated monthly installments as mentioned in the schedule,PAYMENT
+the loan may be repaid before the commencement of emi,PAYMENT
+the equated monthly installment is payable by the borrower,PAYMENT
+all amounts in default including costs and charges shall be debited to the loan account,PAYMENT
+installments or emis are the periodic payments made by the borrower towards repayment of the loan,PAYMENT
+dues include all amounts payable by the borrower towards principal,PAYMENT
+the loan shall be repaid according to the tenor by monthly equated monthly installments,PAYMENT
+the emi amount shall comprise repayment of principal and payment of interest,PAYMENT
+emi means the amount payable every month by the borrower to the bank,PAYMENT
+the emi amount shall be rounded off to the next rupee,PAYMENT
+the bank shall disburse the loan amount into the designated account provided by the borrower,PAYMENT
+the repayment schedule with emi dates and breakup of principal and interest shall be provided after disbursement,PAYMENT
+emi frequency payable monthly,PAYMENT
+"Outstanding principal, interest, charges and expenses become payable",PAYMENT
+Borrower must pay insurance premium,PAYMENT
+The borrower shall pay service charges and processing fees,PAYMENT
+The borrower agrees to reimburse all such charges to the bank separately,PAYMENT
+Stamp duty and documentation charges shall be borne by the borrower,PAYMENT
+Charges for cheque swapping or mandate change may be applicable,PAYMENT
+Loan cancellation or rebooking charges may be charged to the borrower,PAYMENT
+ Statement issuance charges may be recovered by the bank,PAYMENT
+Fees for issuing a duplicate repayment schedule may be charged,PAYMENT
+ Charges for issuing a duplicate No Dues Certificate or NOC may be levied,PAYMENT
+"Any other applicable fees, including GST, shall be payable",PAYMENT
+ll such charges shall be reimbursed to the bank as applicable,PAYMENT
+The loan shall be repaid through equated monthly instalments (EMIs),PAYMENT
+Repayment shall be made through equated monthly instalments (EMI),PAYMENT
+Instalment schedule is on a monthly basis as per the repayment schedule,PAYMENT
+The borrower shall keep sufficient balance in the bank account before the EMI due date,PAYMENT
+The liability of the borrower to pay the necessary insurance premium shall continue even if the bank does not make any payment,PAYMENT
+Service charges and processing fee shall be borne by the borrower,PAYMENT
+Stamp duty charges shall be borne by the borrower,PAYMENT
+ Cheque swapping charges may be applicable,PAYMENT
+Loan cancellation or re-booking charges may be applicable,PAYMENT
+Statement charges may be recovered,PAYMENT
+Charges for duplicate repayment schedule may be charged,PAYMENT
+Charges for duplicate No Dues Certificate (NOC) may be charged,PAYMENT
+"Any other fees including GST, if any, shall be payable",PAYMENT
+The borrower agrees to reimburse such charges to the bank separately,PAYMENT
+EMI or equated monthly instalment means the amount payable every month by the borrower to the bank,PAYMENT
+"Out of the instalments for the first loan, certain instalments are payable prior to disbursal of the loan as advance EMI",PAYMENT
+Instalments or EMIs mean the amounts of periodic payments to be made by the borrower towards repayment of the loan,PAYMENT
+"Such charges and interest shall be applicable on the entire outstanding amount including loan, interest, or any other dues payable",PAYMENT
+"The borrower shall pay all rates, assessments, taxes and other outgoings payable for the vehicle and produce receipts to the bank on demand",PAYMENT
+"All rates, assessments, taxes and other outgoings payable for the vehicle shall be paid and receipts produced to the bank on demand",PAYMENT
+EMI rental means the monthly lease rental payable by the lessee,PAYMENT
+Statement charges may be recovered,PAYMENT
+Such charges shall be reimbursed to the bank separately,PAYMENT
+Charges for issuing a duplicate No Dues Certificate (NOC) may be charged,PAYMENT
+"Any other fees including GST, if any, shall be payable",PAYMENT
+The bank shall collect advance premium from the borrower based upon prevailing market insurance premium rates which may vary at the time of renewal as per the norms and guidelines issued by the insurance company,PAYMENT
+The outstanding adjusted capitalized cost shall be payable at the end of the lease term along with accrued amounts,PAYMENT
+Credit report issuance charges may be paid by the customer or debited from the disbursal amount,PAYMENT
+Valuation charges applicable for used cars may be charged as specified,PAYMENT
+Goods and Services Tax (GST) shall be charged as applicable,PAYMENT
+"Any increase in taxes, duties, levies or charges between order and delivery of the vehicle shall be borne and paid by the borrower",PAYMENT
+"If the price of the vehicle is revised upwards, the borrower shall pay the additional amount required to acquire the vehicle at the revised price",PAYMENT
+"Any refund of the booking amount, after deductions, may be collected by the bank and adjusted against amounts due and payable by the borrower",PAYMENT
+" All present and future taxes, including duties, expenses and other charges in relation to the loan, shall be borne by the borrower",PAYMENT
+"All other charges, costs and expenses specified by the bank and incurred in relation to the agreement or for enforcement of security or recovery of the loan shall be payable by the borrower",PAYMENT
+The base monthly payment is 520.00 and the rent charge component is 110.00,PAYMENT
+"The security deposit is 900.00 and the down payment is 2,500.00",PAYMENT
+"The acquisition fee is 395.00 and the total amount due at signing is 3,795.00",PAYMENT
+We may use this security deposit to pay any amounts that you are required to pay under this lease but do not,PAYMENT
+After you perform all obligations under this lease any remaining balance of the security deposit will be returned to you promptly,PAYMENT
+"The monthly rental amount is 42,000",PAYMENT
+"The security deposit amount is 1,50,000",PAYMENT
+"The processing fee is 15,000",PAYMENT
+"The total amount due at signing is 2,07,000",PAYMENT
+" The down payment amount is 3,000.00",PAYMENT
+"The total amount due at signing is 4,595.00",PAYMENT
+The monthly lease payment is 695.00,PAYMENT
+The bank may in its sole discretion permit prepayment of the loan at the request of the borrower,PAYMENT
+The prepayment shall take effect only when the actual payment is received by the bank,PAYMENT
+"All repayments of principal, payment of interest and other amounts by way of EMI or otherwise shall be given effect to in the loan account in accordance with the method stated in the schedule or as adopted by the bank from time to time",PAYMENT
+The borrower shall be permitted to make partial prepayment of the loan ahead of the prescribed EMI schedule,PAYMENT
+"Costs, commissions, fees, charges, expenses and other amounts due and payable under the agreement shall be payable by the borrower",PAYMENT
+The borrower may foreclose the loan by giving 30 days notice in writing,PAYMENT
+The lessee may purchase the vehicle at lease end by paying the buyout price and purchase option fee as specified,PAYMENT
+Goods and Services Tax (GST) shall be charged extra as per applicable rates on all charges and fees wherever GST is applicable,PAYMENT
+Repayment shall be made through equated monthly instalments (EMI),PAYMENT
+EMI shall be payable as per the agreed schedule,PAYMENT
+"The mode of repayment may be ECS, NACH, SI or PDC",PAYMENT
+Insurance premium shall be payable if applicable,PAYMENT
+Applicable taxes shall be charged extra on all fees and charges,PAYMENT
+ The renter agrees to pay a base fee of 50 dollars,PAYMENT
+Any insurance claim received shall first be applied towards settlement of the borrower’s loan account and any balance shall be refunded to the borrower,PAYMENT
+"If the insurance settlement is less than the amount due to the bank, the borrower shall forthwith pay the deficit amount to the bank",PAYMENT
+The borrower shall promptly repay the loan to the bank in accordance with the repayment terms mentioned in the schedule,PAYMENT
+"Where there is more than one borrower, they shall be jointly and severally liable to repay the loan, interest and all other sums due and payable",PAYMENT
+"The borrower shall pay and discharge all rates, taxes, outgoings and charges pertaining to the vehicle where applicable",PAYMENT
+"The borrower shall not leave India for employment, business or long stay without first fully repaying the outstanding loan with interest and other dues",PAYMENT
+Credit report issuance charges may be paid by the customer or debited from the disbursal amount,PAYMENT
+"Leaving India for employment, business or long stay shall require full repayment of the outstanding loan along with interest and other dues",PAYMENT
+"All rates, taxes, outgoings and charges pertaining to the vehicle shall be paid and discharged where applicable",PAYMENT
+"In case of more than one borrower, all borrowers shall be jointly and severally liable to repay the loan, interest and other sums due",PAYMENT
+Repayment of the loan shall be made in accordance with the repayment terms mentioned in the schedule,PAYMENT
+"If the insurance settlement is less than the amount due, the deficit amount shall be paid to the bank immediately",PAYMENT
+Any insurance claim received shall first be applied towards settlement of the loan account and any balance shall be refunded to the borrower,PAYMENT
+Any payment credited to the loan account shall be first utilized to clear the oldest outstanding dues before being adjusted against later dues,PAYMENT
+" In case of partial payment, the amount shall be appropriated against earlier overdue amounts before adjusting current dues",PAYMENT
+Subsequent payments shall first be applied to clear previous unpaid instalments before being applied to newly due amounts,PAYMENT
+"If any recovery exceeds the earlier overdue amount, the excess shall be adjusted towards the next due amount",PAYMENT
+This is a request for execution of standing instruction in favour of the bank for repayment of the sanctioned loan amount,PAYMENT
+"Upfront charges such as processing fee, insurance premium, valuation charges and stamp duty shall be deducted and paid by the borrower",PAYMENT
+The net disbursement shall be the amount actually disbursed after deducting applicable charges,PAYMENT
+The total amount payable by the borrower shall be as specified in the loan details,PAYMENT
+The bank shall disburse the loan amount into the designated account or as per the borrower’s disbursal request,PAYMENT
+"Charges such as insurance, documentation and valuation charges shall be applicable as specified in the loan details",PAYMENT
+Conversion charges may be applicable for switching from floating to fixed interest or vice versa,PAYMENT
+The transaction fee is subject to change at the discretion of the bank,PAYMENT
+"Fees and charges shall include processing charges, service charges, prepayment charges, cheque bounce charges, late payment charges, stamp duty, legal and repossession charges, valuation charges, statement charges, transaction fees and all other amounts receivable by the bank under the agreement or collateral documents",PAYMENT
+,
+,
+"If the borrower dies or the business is liquidated, dissolved, or reconstructed",PENALTY
+If any winding-up or insolvency petition is filed against the borrower,PENALTY
+If the value of the vehicle or any security depreciates and the borrower fails to provide additional security,PENALTY
+If a receiver is appointed over the borrower’s assets,PENALTY
+Cheque bouncing charges may be levied in case of dishonour,PENALTY
+A late payment penalty will be charged for delayed instalments,PENALTY
+Any false or incorrect information or representation given by the borrower shall be treated as a default event,PENALTY
+Initiation of insolvency proceedings by any third party shall be considered a default,PENALTY
+Becoming bankrupt or insolvent shall be regarded as an event of default,PENALTY
+Suspension of payments to creditors or a threat to stop such payments shall constitute a default,PENALTY
+"Enforcement of any attachment, distress, or execution against the borrower or the security shall be considered a default",PENALTY
+Inability or unwillingness of the bank to continue the loan due to regulatory or other reasons may result in loan recall,PENALTY
+No prepayment charges are applicable for fixed-rate loans up to 50 lakhs for MSE borrowers and co-borrowers,PENALTY
+Penal charges and other charges may be applied in case of non-payment or delay,PENALTY
+Cheque bouncing charges may be levied,PENALTY
+Late payment penalty may be charged,PENALTY
+"Upon delay in payment of instalments or repayment of any other dues beyond the due date, the bank shall be entitled to charge late payment charges",PENALTY
+Financial default includes all types of payment or financial defaults and irregularities with respect to the loan account,PENALTY
+"If the borrower fails to pay the revised amount within the allowed time, the bank may cancel or rescind the booking of the vehicle",PENALTY
+Prepayment shall be subject to the borrower paying prepayment charges calculated on the amount due at the rate decided by the bank from time to time,PENALTY
+Any delay or default in payment of any EMI shall make the borrower liable to pay penal charges as mentioned in the schedule,PENALTY
+Such default shall constitute an event of default and make all sums under the agreement due and payable to the bank forthwith,PENALTY
+"Penal charges and prepayment charges, if any, shall be payable by the borrower",PENALTY
+Preclosure within 13 to 24 months shall attract charges of 5% or 3% on the principal outstanding or part payment amount as applicable,PENALTY
+Part prepayment within 13 to 24 months from the first EMI shall attract charges on the part payment amount,PENALTY
+Preclosure or part prepayment after 24 months from the first EMI shall attract charges as specified,PENALTY
+"Loan cancellation, loan reschedulement and re-booking charges may be applicable in the event of cancellation",PENALTY
+Such foreclosure or part prepayment shall be subject to charges payable at the rate mentioned in the schedule on the outstanding amount,PENALTY
+After 45 days of non payment the lessor may initiate repossession as allowed by law,PENALTY
+Early termination of the lease shall be subject to an early termination fee and settlement of remaining balance and excess mileage or damages,PENALTY
+ Payments more than 10 days late shall incur a late fee and returned payment fee as specified,PENALTY
+"Charges may apply for excess wear, missing equipment or damaged interior or exterior components",PENALTY
+Foreclosure within the first 6 to 12 months of the loan tenor shall attract charges on the principal outstanding,PENALTY
+Foreclosure after 12 months of the loan tenor shall attract charges on the principal outstanding,PENALTY
+Delay in payment of EMI shall attract penalty on the EMI amount,PENALTY
+Penal charges shall be applicable as per the schedule of charges,PENALTY
+"Enforcement of any attachment, distress, execution or similar process against the borrower or the security shall constitute a default",PENALTY
+"Creation or attempt to create any charge, lien or encumbrance over the hypothecated vehicle without the bank’s consent shall constitute a default",PENALTY
+Any substantial change in constitution or management of the borrower without the bank’s consent shall constitute a default,PENALTY
+Failure to furnish information or documents required by the bank shall constitute a default,PENALTY
+"Confiscation, attachment or taking custody of the vehicle by any authority shall constitute a default",PENALTY
+"If the vehicle is destroyed, badly damaged or treated as total loss in the bank’s opinion, it shall constitute a default",PENALTY
+Any cheque issued by the borrower not being honoured on presentation shall constitute a default,PENALTY
+"Any instruction to stop payment or revoke ECS, SI or PDC shall constitute a default",PENALTY
+Failure to provide a certified copy of the registration certificate within a reasonable time shall constitute a default,PENALTY
+Use of the vehicle for any illegal purpose or activity shall constitute a default,PENALTY
+Non payment beyond the grace period shall constitute a default,PENALTY
+Late payment beyond the grace period shall be governed by the late payment policy,PENALTY
+ Late payments shall incur a fee of 40 after the grace period,PENALTY
+Filing of any insolvency resolution application by or against the borrower or guarantor shall constitute an event of default,PENALTY
+Failure to pay any financial indebtedness to the bank or any other financial institution when due or within the applicable grace period shall constitute a default,PENALTY
+Cancellation or suspension of any financial commitment by any creditor due to a default shall constitute an event of default,PENALTY
+"Any default by the borrower under any other loan, credit facility or financial arrangement shall be treated as an event of default under this agreement",PENALTY
+"If any representation, statement or information provided by the borrower is found to be false, misleading or incorrect, it shall constitute an event of default",PENALTY
+"Breach of any term, condition or covenant of this agreement shall constitute an event of default",PENALTY
+"Failure to cooperate with inspection, verification, audit or recovery proceedings shall constitute an event of default",PENALTY
+"The borrower shall be liable to pay all legal, recovery, enforcement and collection costs incurred by the bank due to any default",PENALTY
+"All costs incurred for repossession, storage, custody and sale of the vehicle shall be borne and paid by the borrower",PENALTY
+"If the borrower fails to maintain or renew mandatory insurance or permits, it shall constitute an event of default",PENALTY
+"If the borrower does any act which prejudices, weakens or endangers the security or the bank’s interest, it shall constitute an event of default",PENALTY
+"If any financial indebtedness becomes due and payable before its specified maturity due to a default, it shall constitute an event of default",PENALTY
+,
+,
+The EMI must be cleared on or before the due date.,TERM
+The repayment shall be made according to the agreed loan tenure,TERM
+The EMI should be cleared on the due date,TERM
+Such advance EMI instalments shall be as specified in the schedule,TERM
+"The instalments shall be payable monthly, bi-monthly, quarterly, half-yearly, yearly, or at such other intervals as specified by the bank in the schedule or sanction letter",TERM
+Payments shall be made in advance with the lease date being the first day of the month and as per the due dates specified,TERM
+Any amount due to the bank under any credit facility is overdue if it is not paid by the due date fixed by the bank,TERM
+"The revised amount shall be paid within fifteen days of the price revision or within the period allowed by the manufacturer or dealer, whichever is earlier",TERM
+"The lease term starts on May 15, 2025 and expires on May 14, 2028 with a duration of 36 months",TERM
+Payments are due on the 5th of each month,TERM
+ Rentals are due monthly,TERM
+"The lease term starts on May 15, 2025 and expires on May 14, 2028 with a duration of 36 months",TERM
+Monthly payments are due on or before the 7th of each month,TERM
+"The lease duration is 48 months starting from April 1, 2025 and ending on March 31, 2029",TERM
+ Such partial prepayment shall be permitted only once in a calendar month and not more than twice in a financial year,TERM
+Foreclosure shall require a notice period of 30 days,TERM
+Proof of insurance must be provided before delivery,TERM
+Repayment shall be according to the agreed tenor,TERM
+"The schedule shall specify the first EMI, last EMI and the date of commencement of EMI",TERM
+The annual outstanding or balance statement shall be issued on the date specified,TERM
+EMI amount shall be payable every month except the last EMI,TERM
+The age of the oldest dues shall be reckoned in days from the date on which the oldest unpaid amount became due,TERM
+"The EMI details including amount, number of EMIs, start date, due date, tenure and frequency shall be as specified",TERM
+The final repayment schedule with bifurcation of principal and interest shall be shared after disbursement along with the welcome letter,TERM
+The date of reset of interest rate and the mode of communication of changes are marked as not applicable in the loan details,TERM
+Failure to furnish the end-use statement within ten days of the bank’s request shall constitute a default,TERM
+"If the vehicle is stolen or untraceable for a period of thirty days, it shall constitute a default",TERM
+"For computation of time periods, the words from or commencing on shall include the specified date, while to, until or ending on shall exclude the specified date",TERM
+"
+For agricultural advances, the account shall be treated as non-performing if overdue for two crop seasons for short duration crops or one crop season for long duration crops
+
+",TERM
+A grace period shall be applicable for payment before default is determined,TERM
+A 5 day grace period shall apply to monthly instalments,TERM
+A grace period of 10 days shall apply for payment before late charges are applied,TERM
+"The bank shall exercise the right to recall the loan by issuing a written notice to the borrower and the guarantor, if any",TERM
+"If the vehicle is not delivered or registered at signing, the particulars shall be informed to the bank within seven days of delivery or registration, whichever is earlier",TERM
+"The bank may grant permission for use of the vehicle for a specific period of time or for a specific destination outside the state
+",TERM
+The bank shall return the repossessed vehicle within seven days from the date of realization of the entire outstanding dues,TERM
+"Overdue accounts shall be classified into buckets based on the number of days past due such as up to 30 days, 30 to 60 days and 60 to 90 days",TERM
+A term loan shall be treated as a non-performing asset if interest or principal remains overdue for a period of more than 90 days,TERM
+An overdraft or cash credit account shall be treated as non-performing if it remains out of order as per the applicable criteria,TERM
+Bills purchased or discounted shall be treated as non-performing if they remain overdue for more than 90 days,TERM
+"Any change in residential address, employment or the place where the vehicle is normally kept shall be intimated to the bank within ten days of such change",TERM
+A moratorium period of the specified number of months shall apply from the date of first disbursement if applicable,TERM
+Bills purchased or discounted shall be treated as non-performing if they remain overdue for more than 90 days,TERM
+,
+,
+,
+Borrower confirms having read and understood the agreement,OTHER
+The borrower is responsible for keeping the vehicle insured,OTHER
+The borrower shall keep the vehicle specifically appropriated to the security under the agreement,OTHER
+Inspection of the vehicle and related documents shall be allowed by the bank or its authorised persons for verification or valuation,OTHER
+"We are aware that it is on the faith of this representation, declaration and confirmation that you have agreed to consider my loan application for financial assistance under the priority sector category as defined by Reserve Bank of India guidelines",OTHER
+The vehicle shall remain hypothecated with the bank as security for the loan until closure of the loan to the satisfaction of the bank,OTHER
+The borrower authorises the bank to cancel or rescind the booking and to receive any refund from the manufacturer or dealer,OTHER
+"Details of security or collateral obtained, such as fixed deposit, if applicable",OTHER
+The bank shall have and continue to have first charge on the assets and deposits on which security has been created in respect of the loan,OTHER
+All rights and powers vested in the bank under any security or charge shall also be available for other liabilities,OTHER
+"Such security and rights shall continue to be available irrespective of whether the loan is repaid, prepaid or otherwise satisfied",OTHER
+The lessee must maintain full comprehensive and collision insurance coverage with minimum liability limits as required under Polish and EU law,OTHER
+"Deductibles shall not exceed 1,000",OTHER
+"The vehicle must be returned clean and free of major damage with all keys, documents and accessories, subject to acceptable wear standards",OTHER
+" This agreement is governed by the laws of the state of Illinois, USA",OTHER
+ Details of security or collateral obtained shall be as per Schedule II,OTHER
+" The parties confirm that the vehicle price has been arrived at after taking into account all relevant taxes, duties and levies applicable as on the date of the agreement",OTHER
+ The vehicle shall be driven only by persons holding a valid driving license,OTHER
+Any loss or damage to the vehicle due to force majeure or act of God shall be promptly reported to the bank,OTHER
+Financial statements and such other documents as may be required by the bank from time to time shall be furnished,OTHER
+The vehicle shall be properly maintained and no act shall be done which renders the security insufficient,OTHER
+Any change in employment or occupation shall be informed to the bank,OTHER
+" The vehicle shall not be sold, transferred or encumbered or any third-party rights created during the tenure of the agreement",OTHER
+"All applicable rules of the bank shall be complied with and necessary licenses, permits and permissions shall be obtained for use of the vehicle",OTHER
+Possession of the vehicle is being handed over to the authorised agents of the bank after verification of authority letter and identification details,OTHER
+"Details of the loan facility including amount, term and interest type (fixed or floating) shall be as specified in the loan records",OTHER
+Any change in interest rates shall be communicated by letter or email to the address or email ID updated in the bank’s records,OTHER
+" Details of the transaction, persons involved, mode of transaction and related identification information such as Aadhaar, PAN and income details shall be provided as required",OTHER
+Details of the security asset for the vehicle shall be shared separately in an annexure which shall form part of the agreement,OTHER
+The security shall be created by way of first and exclusive charge through hypothecation of the vehicle in favour of the bank,OTHER
+"The details of the nodal grievance redressal officer including name, designation and contact information shall be provided by the bank",OTHER
+The borrower and co-borrower declare that the loan documents have been read and explained to them and that they agree to abide by all the terms and conditions,OTHER
+"Items such as manufacturer subvention, DSA plough back and dealer subvention are marked as not applicable or nil",OTHER
+The vehicle shall be hypothecated in favour of the bank as security,OTHER
+The amount of the transaction shall be specified in the relevant form or document,OTHER
+The income computed in accordance with the Income Tax Act for the relevant financial year shall be less than the maximum amount not chargeable to tax,OTHER
+"Any dispute, difference or claim arising out of or relating to the agreement or transaction documents shall be referred to and resolved by arbitration in accordance with the applicable rules",OTHER
+"The term transaction documents shall mean the loan application, sanction letter, this agreement, any addendum and other related documents relied upon by the bank to extend the loan",OTHER
+A business day shall mean a day on which the specified branch or such other office of the bank is open for normal business transactions,OTHER
+The indemnification clause shall survive the termination or expiration of the agreement or transaction documents,OTHER
+The vehicle particulars informed to the bank shall be in the prescribed format and shall be deemed to form part of the agreement,OTHER
+"If no response or details of a substitute institution are received within the notice period, the claimant may request the independent institution to nominate the sole arbitrator in accordance with its rules",OTHER
+"Details of the repayment instrument or vehicle such as make, model and engine number shall be recorded as required",OTHER
+"The term relative shall include the spouse, parents, children, siblings and their respective spouses, including step relations, as specified in the agreement",OTHER
+"This agreement constitutes the entire agreement between the parties and supersedes all prior discussions, negotiations and understandings whether written or oral",OTHER
+No amendment or modification of this agreement shall be valid unless made in writing and signed by both the borrower and the bank,OTHER
+"If any provision of this agreement is held to be invalid or unenforceable, the remaining provisions shall continue to remain in full force and effect",OTHER
+The failure of the bank to exercise any right or remedy under this agreement shall not operate as a waiver of such right or remedy,OTHER
+The borrower shall not assign or transfer any of his rights or obligations under this agreement without the prior written consent of the bank,OTHER
+The bank shall be entitled to assign or transfer its rights and obligations under this agreement to any third party without the consent of the borrower,OTHER
+All notices and communications under this agreement shall be deemed to be valid if sent to the address or email recorded with the bank,OTHER
+The borrower agrees to execute and deliver such further documents as may be required by the bank for giving full effect to this agreement,OTHER
+The headings in this agreement are for convenience only and shall not affect the interpretation of any provision,OTHER
+The rights and obligations under this agreement shall be binding upon and shall inure to the benefit of the parties and their respective successors and permitted assigns,OTHER
+,
+,
+An additional charge of 5 dollars per mile shall be payable for mileage over the agreed limit,MILEAGE
+"The allowed mileage shall be 6,000 miles per year under the lease",MILEAGE
+Excess mileage shall be charged at USD 1.50 per additional mile exceeding the annual mileage allowance,MILEAGE
+The renter shall pay 5 dollars per mile for any mileage exceeding the agreed limit,MILEAGE
+"The annual mileage allowance under the lease shall be 12,000 miles",MILEAGE
+Excess mileage shall be charged at $0.25 per mile,MILEAGE
+"The lessee shall keep the mileage of the vehicle within the specified daily, weekly, monthly and annual mileage limits",MILEAGE
+The odometer reading recorded at the time of return of the vehicle shall be final and binding for calculation of mileage,MILEAGE
+Any unused mileage allowance shall not be refunded or carried forward,MILEAGE
+"In case of early termination of the lease, the mileage allowance shall be calculated on a pro-rata basis",MILEAGE
+Any tampering or interference with the odometer shall be treated as a material breach of the agreement,MILEAGE
+The mileage of the vehicle shall be verified by inspection at the time of return or repossession,MILEAGE
+"The lessee shall pay an excess mileage fee for each mile driven in excess of the specified daily, weekly, monthly or annual mileage limits as set out in the agreement",MILEAGE
+The odometer reading recorded at the time of delivery shall be the baseline mileage for the vehicle,MILEAGE
+The service contract or protection plan shall terminate when the vehicle’s odometer reaches the specified mileage limit,MILEAGE
+The odometer reading recorded at the time of delivery shall be the baseline mileage for the vehicle,MILEAGE
+"If the odometer has been inoperative or tampered with, the vehicle shall be treated as having suffered material damage or breach of conditions",MILEAGE
+The odometer reading recorded at the time of return of the vehicle shall be final and binding for the purpose of calculation of mileage usage,MILEAGE
+"Any unused mileage allowance shall not be refunded, adjusted or carried forward to any subsequent period",MILEAGE
+"In the event of early termination of the lease, the permitted mileage shall be calculated on a pro-rata basis up to the date of termination",MILEAGE
+The lessor or bank shall be entitled to verify the mileage of the vehicle by inspection at any time including at the time of return or repossession,MILEAGE
+"If the odometer is found to be defective, replaced or inoperative, the mileage shall be estimated by the lessor or bank based on reasonable usage parameters",MILEAGE
+Any dispute relating to the odometer reading or mileage usage shall be resolved based on the inspection report or service records of the vehicle,MILEAGE
+"If the borrower or lessee is found to have tampered with or interfered with the odometer, the lessor or bank may treat the vehicle as having exceeded the permitted mileage",MILEAGE
+The borrower or lessee shall produce the vehicle for mileage verification if so required by the bank or lessor during the term of the agreement,MILEAGE
+The borrower or lessee shall provide a statement of odometer reading at such intervals as may be required by the bank or lessor,MILEAGE
+"If the odometer reading is unreadable or unavailable at the time of return, the mileage usage shall be determined by the bank or lessor in its reasonable discretion",MILEAGE
