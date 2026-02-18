@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "npm --prefix frontend run dev"
+  },
+  "dependencies": {
+    "axios": "^1.13.4",
+    "lucide-react": "^0.563.0",
+    "react-markdown": "^10.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+streamlit
+pdfplumber
+pytesseract
+pdf2image
+ollama
+fastapi
+uvicorn
+python-multipart
+requests
