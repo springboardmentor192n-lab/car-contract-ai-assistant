@@ -6,7 +6,7 @@ An AI-powered tool designed to analyze car lease contracts, extract key terms, a
 
 ## 🚀 Deployment
 
-Live Demo: [View Live App](https://github.com/Raghukn21/raghuAi) *(Update with your specific deployment URL)*
+Live Demo: [View Live App](https://github.com/springboardmentor192n-lab/car-contract-ai-assistant) *(Update with your specific deployment URL)*
 
 ---
 
