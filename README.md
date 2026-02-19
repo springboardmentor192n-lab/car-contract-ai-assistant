@@ -82,13 +82,6 @@ Hugging Face Inference API
 
 Frontend
 
-<img width="1863" height="938" alt="Screenshot 2026-02-19 112109" src="https://github.com/user-attachments/assets/82dff2b7-a3fe-49fe-b0db-0988cbef5746" />
-
-<img width="1869" height="914" alt="Screenshot 2026-02-19 112126" src="https://github.com/user-attachments/assets/38b02a5c-268a-4193-84a8-f90020f24ed5" />
-
-<img width="1710" height="931" alt="Screenshot 2026-02-19 163201" src="https://github.com/user-attachments/assets/531e12f5-e344-468e-8d50-6d4a9826523b" />
-
-
 
 
 HTML5
@@ -96,3 +89,11 @@ HTML5
 CSS3
 
 Vanilla JavaScript (Fetch API)
+
+<img width="1863" height="938" alt="Screenshot 2026-02-19 112109" src="https://github.com/user-attachments/assets/82dff2b7-a3fe-49fe-b0db-0988cbef5746" />
+
+<img width="1869" height="914" alt="Screenshot 2026-02-19 112126" src="https://github.com/user-attachments/assets/38b02a5c-268a-4193-84a8-f90020f24ed5" />
+
+<img width="1710" height="931" alt="Screenshot 2026-02-19 163201" src="https://github.com/user-attachments/assets/531e12f5-e344-468e-8d50-6d4a9826523b" />
+
+
