@@ -1,144 +1,286 @@
-🚗 AutoFinance Guardian
+# 🚗 AutoFinance Guardian
 
-AutoFinance Guardian is a comprehensive full-stack application designed to assist users in navigating the complexities of auto financing. It provides tools for contract analysis, market data insights, negotiation support, and VIN lookup, all accessible through a user-friendly Flutter mobile application and powered by a robust Python backend.
+> **AI-Powered Auto Financing Assistant**
+> Analyze contracts, get market insights, perform VIN lookups, and negotiate smarter — all from a beautiful Flutter app backed by a scalable FastAPI backend.
 
-✨ Features
+---
 
-📄 Contract Analysis: Upload and analyze loan or lease contracts to identify key terms, potential pitfalls, and areas for negotiation.
+## 🌐 Live Demo
 
-📊 Market Data Insights: Access real-time or historical market data for vehicle pricing, interest rates, and other relevant financial indicators.
+🔗 https://autofinance-guardian.web.app/
 
-🤝 Negotiation Support: Receive AI-powered recommendations and strategies to enhance your negotiation position with dealerships or lenders.
+---
 
-🚘 VIN Lookup: Quickly retrieve detailed information about a vehicle using its Vehicle Identification Number (VIN).
+## 📸 Screenshots
 
-🔐 User Management: Secure user authentication and management for personalized experiences.
+> Add your real screenshots inside the `/screenshots` folder and update paths below.
 
-🗄️ Database Management: Robust data persistence using SQLAlchemy and Alembic for migrations.
+| Home                      | Contract Analysis             | VIN Lookup               | Market Insights             | Negotiation Support              |
+| ------------------------- | ----------------------------- | ------------------------ | --------------------------- | -------------------------------- |
+| ![](screenshots/home.png) | ![](screenshots/contract.png) | ![](screenshots/vin.png) | ![](screenshots/market.png) | ![](screenshots/negotiation.png) |
 
-🛠️ Technologies Used
-🔙 Backend
+---
 
-Python: Programming language
+# ✨ Features
 
-FastAPI: Web framework for building APIs
+## 📄 Contract Analysis
 
-SQLAlchemy: ORM (Object Relational Mapper) for database interactions
+* Upload loan/lease contracts (PDF)
+* Extract key financial terms
+* Identify hidden clauses & risks
+* AI-powered negotiation suggestions
 
-SQLite: Default database (can be configured for others)
+## 🚘 VIN Lookup
 
-Alembic: Database migrations tool
+* Decode vehicle details instantly
+* Manufacturer, model, year, specs
+* Fraud & history awareness ready
 
-Pydantic: Data validation and settings management
+## 📊 Market Data Insights
 
-Uvicorn: ASGI server for running the FastAPI application
+* Real-time car price trends
+* Interest rate benchmarks
+* Smart affordability recommendations
 
-pytest: Testing framework
+## 🤝 Negotiation Support
 
-🎨 Frontend
+* AI negotiation strategy generator
+* Dealer comparison insights
+* Smart loan vs lease suggestions
 
-Flutter: UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase
+## 🔐 Secure User Management
 
-Dart: Programming language for Flutter
+* Firebase Authentication (Email / Google)
+* JWT-secured API communication
+* Personalized financial dashboards
 
-⚙️ Setup and Installation
-✅ Prerequisites
+---
 
-Python 3.8+
+# 🧠 System Architecture
 
-Flutter SDK
+```
+Flutter Mobile/Web App
+        │
+        │ HTTPS REST API
+        ▼
+FastAPI Backend (Render)
+        │
+        ├── Contract AI Analysis
+        ├── Market Data Service
+        ├── VIN Decoder Service
+        │
+        ▼
+PostgreSQL Database
+        │
+        ▼
+External APIs / AI Models
+```
 
-Git
+---
 
-🔧 Backend Setup
+# 🛠️ Tech Stack
 
-Clone the repository:
+## 🎨 Frontend
 
+* Flutter (Dart)
+* Firebase Hosting
+* Firebase Authentication
+* Provider State Management
+
+## 🔙 Backend
+
+* Python
+* FastAPI
+* SQLAlchemy ORM
+* Alembic Migrations
+* Uvicorn ASGI Server
+
+## 🗄️ Database
+
+* PostgreSQL (Production)
+* SQLite (Development)
+
+## ☁️ Deployment
+
+* Backend: Render
+* Frontend: Firebase Hosting
+
+---
+
+# 📁 Project Structure
+
+```
+autofinance_guardian/
+├── backend/
+│   ├── core/            # Security & configs
+│   ├── models/          # ORM + Pydantic schemas
+│   ├── routes/          # API endpoints
+│   ├── services/        # AI, VIN, Market logic
+│   ├── tests/           # Unit & integration tests
+│   ├── utils/           # Helpers
+│   ├── main.py          # FastAPI entry
+│   ├── database.py      # DB engine/session
+│   ├── crud.py          # CRUD operations
+│   └── requirements.txt
+│
+├── frontend/guardian_app/
+│   ├── lib/
+│   │   ├── core/        # API + shared utils
+│   │   ├── features/    # Feature modules
+│   │   ├── models/      # Data models
+│   │   ├── providers/   # State management
+│   │   └── screens/     # UI screens
+│   └── pubspec.yaml
+│
+└── screenshots/         # App UI screenshots
+```
+
+---
+
+# 🚀 Local Setup Guide
+
+## 🔧 Prerequisites
+
+* Python 3.9+
+* Flutter SDK
+* Firebase CLI
+* Git
+
+---
+
+# 🔙 Backend Setup (FastAPI)
+
+```bash
 git clone https://github.com/your-username/autofinance_guardian.git
 cd autofinance_guardian/backend
 
-
-Create and activate a virtual environment:
-
 python -m venv venv
-.\venv\Scripts\activate
-
-
-Install dependencies:
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
-
-
-Database Migrations:
-Initialize and apply database migrations.
-
 alembic upgrade head
 
-
-Run the backend server:
-
 uvicorn main:app --reload
+```
 
+Backend runs at:
 
-The backend API will be accessible at:
-👉 http://127.0.0.1:8000
+```
+http://127.0.0.1:8000
+```
 
-📱 Frontend Setup
+---
 
-Navigate to the frontend directory:
+# 📱 Frontend Setup (Flutter)
 
+```bash
 cd ../frontend/guardian_app
-
-
-Get Flutter packages:
-
 flutter pub get
-
-
-Run the Flutter application:
-
 flutter run
+```
 
+---
 
-This will launch the application on a connected device or emulator.
+# 🔗 Environment Variables
 
-🗂️ Project Structure
-autofinance_guardian/
-├── backend/
-│   ├── core/                  # Core configurations and security
-│   ├── models/                # Database ORM models and Pydantic schemas
-│   ├── routes/                # API endpoints
-│   ├── services/              # Business logic and external integrations (AI, Market Data, VIN)
-│   ├── tests/                 # Unit and integration tests for the backend
-│   ├── utils/                 # Utility functions
-│   ├── main.py                # Main FastAPI application entry point
-│   ├── database.py            # Database session and engine setup
-│   ├── crud.py                # CRUD operations for database models
-│   ├── requirements.txt       # Python dependencies
-│   ├── alembic.ini            # Alembic configuration
-│   └── ...
-├── frontend/
-│   └── guardian_app/
-│       ├── lib/               # Dart source code for the Flutter app
-│       │   ├── core/          # Core utilities and shared components
-│       │   ├── features/      # Feature-specific modules (e.g., contract_analysis, market_data)
-│       │   ├── models/        # Data models for the frontend
-│       │   ├── providers/     # State management providers
-│       │   └── screens/       # UI screens
-│       ├── pubspec.yaml       # Flutter project dependencies
-│       └── ...
-└── sample_contracts/          # Directory containing sample PDF contracts
+Create `.env` inside backend:
 
-🚀 Usage
+```
+DATABASE_URL=postgresql://user:password@host:5432/autofinance
+SECRET_KEY=supersecretkey
+FIREBASE_PROJECT_ID=your_project_id
+```
 
-Once both the backend and frontend are running:
+---
 
-Register a new user or log in through the mobile application.
+# ☁️ Production Deployment
 
-Utilize the different features: upload contracts for analysis, browse market data, or perform VIN lookups.
+## 🔙 Backend → Render
 
-Follow the in-app instructions to interact with the AutoFinance Guardian services.
+1. Push backend to GitHub
+2. Create Web Service on Render
+3. Settings:
 
-📄 License
+```
+Build Command: pip install -r requirements.txt
+Start Command: uvicorn main:app --host 0.0.0.0 --port 10000
+```
 
-(Consider adding a LICENSE file and mentioning it here, e.g., MIT License)
+Backend URL:
+
+```
+https://your-backend.onrender.com
+```
+
+---
+
+## 🎨 Frontend → Firebase Hosting
+
+```bash
+flutter build web
+firebase login
+firebase init
+firebase deploy
+```
+
+App live at:
+
+```
+https://autofinance-guardian.web.app
+```
+
+---
+
+# 🔌 API Endpoints Overview
+
+| Method | Endpoint            | Description                    |
+| ------ | ------------------- | ------------------------------ |
+| POST   | `/analyze-contract` | Upload & analyze loan contract |
+| GET    | `/vin/{vin}`        | Vehicle VIN lookup             |
+| GET    | `/market`           | Market financial insights      |
+| POST   | `/auth/login`       | User authentication            |
+
+---
+
+# 🔒 Security
+
+* Firebase JWT Authentication
+* Secure API token validation
+* Encrypted user session handling
+* Role-based access ready
+
+---
+
+# 📊 Future Enhancements
+
+* 📈 Loan EMI calculator with AI suggestions
+* 🧠 LLM-powered contract clause explanation
+* 📉 Interest rate prediction model
+* 📲 Native iOS & Android releases
+
+---
+
+# 🤝 Contributing
+
+Pull requests are welcome!
+For major changes, please open an issue first to discuss what you would like to change.
+
+```bash
+git checkout -b feature/new-feature
+git commit -m "Add new feature"
+git push origin feature/new-feature
+```
+
+---
+
+# 📄 License
+
+MIT License © 2026 AutoFinance Guardian
+
+---
+
+# ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub and share it with others!
+
+> Built with ❤️ using Flutter, FastAPI, Firebase & Render.
