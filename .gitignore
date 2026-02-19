@@ -1,0 +1,47 @@
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+
+# Database
+*.db
+
+# Uploads
+backend/uploads/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Test/debug output files
+check_output.txt
+check_output_v2.txt
+output.txt
+check_output_v2.txt
+analysis_errors.txt
+analysis_output.txt
+analysis_results.txt
+
+# Flutter/Dart
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+*.lock
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Test PDFs
+*.pdf
