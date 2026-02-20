@@ -6,6 +6,26 @@ By leveraging advanced OCR, Machine Learning classification, and Large Language 
 
 ---
 
+## 📸 App Screenshots
+
+### 1. Home Dashboard
+![Home Dashboard](assets/home.png)
+*Central hub to upload contracts, view past analyses, and access the negotiation assistant.*
+
+### 2. AI Contract Summary
+![Contract Summary](assets/summary.png)
+*Instantly extracts terms, flags predatory clauses, and generates actionable negotiation tips.*
+
+### 3. Market Price Benchmark
+![Market Benchmark](assets/benchmark.png)
+*Calculates a fairness score by mapping your total lease cost against current market data.*
+
+### 4. Interactive Negotiation Assistant
+![Negotiation Assistant](assets/negotiation.png)
+*A context-aware AI chatbot that helps you draft emails and negotiate better terms directly with the dealer.*
+
+---
+
 ## ✨ Features
 
 *   **📄 AI PDF Contract Analysis**: Upload a dealer contract (PDF) and instantly receive a simplified breakdown of the terms, including monthly payments, term length, money factor, and hidden fees.
