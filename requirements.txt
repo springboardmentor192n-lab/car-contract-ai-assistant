@@ -2,7 +2,8 @@ streamlit
 pdfplumber
 pytesseract
 pdf2image
-groq==0.9.0
+groq>=0.10.0
+httpx==0.27.0
 fastapi
 uvicorn
 python-multipart
