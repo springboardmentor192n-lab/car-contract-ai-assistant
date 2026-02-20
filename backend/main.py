@@ -13,7 +13,7 @@ sys.path.insert(0, BASE_DIR)
 # -------------------------------------------------
 # Project imports
 # -------------------------------------------------
-from ocr.text import extract_text
+from .ocr.text import extract_text
 from .llm_service import generate_summary, negotiation_chat
 from .fairness import calculate_fairness_score
 from .vin_service import get_vehicle_details
