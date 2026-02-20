@@ -39,7 +39,20 @@ Before you begin, ensure you have the following installed:
     - *Windows*: [Download Installer](https://github.com/UB-Mannheim/tesseract/wiki)
     - *Mac*: `brew install tesseract`
     - *Linux*: `sudo apt-get install tesseract-ocr`
+## Demo Video
+[https://drive.google.com/file/d/1KHchHwjlIKp_maOsJEti7TdAcxjxMFLm/view?usp=drive_link](url)
 
+## Screenshots
+<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/0acf2a72-731b-490a-8a4c-e15f131bac8d" />
+<img width="1918" height="1020" alt="image" src="https://github.com/user-attachments/assets/14f51fde-3f8b-4fd9-921d-261e19225a33" />
+<img width="1919" height="973" alt="image" src="https://github.com/user-attachments/assets/0358187e-b9e1-440b-b7da-ca5be4362804" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/14ae1ae2-a395-45f7-867e-a22d2e0c2877" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f7347fe2-1968-4d93-a482-fa2d9334e070" />
+<img width="1918" height="1077" alt="image" src="https://github.com/user-attachments/assets/1756821f-6355-44eb-809d-43b5e59163b0" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/17c9401f-eaff-458e-82be-469c95d26a4a" />
+
+## Demo Video
+https://github.com/user-attachments/assets/d945de99-ab95-4b88-a8df-8a5540e7788e
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
