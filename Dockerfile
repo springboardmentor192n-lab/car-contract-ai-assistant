@@ -27,7 +27,7 @@ WORKDIR /app
 COPY backend/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir pdf2image pytesseract python-dotenv groq gunicorn
+RUN pip install --no-cache-dir pdf2image pytesseract python-dotenv groq gunicorn requests scikit-learn
 
 # Copy the backend code into the container
 COPY backend/ /app/backend/
