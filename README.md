@@ -77,6 +77,10 @@ Create a `.env` file in the `backend` directory with the following variables:
 DATABASE_URL=sqlite:///./sql_app.db
 # Or for PostgreSQL: postgresql://user:password@localhost/dbname
 
+
+https://github.com/user-attachments/assets/ae607308-cb91-4a0a-909f-50529771c70a
+
+
 # Security
 SECRET_KEY=your_super_secret_key_here
 ALGORITHM=HS256
