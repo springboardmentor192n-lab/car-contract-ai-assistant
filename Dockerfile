@@ -6,6 +6,7 @@ FROM python:3.10-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONPATH=/app/backend:$PYTHONPATH
 
 # Install system dependencies (Poppler for PDF conversion and Tesseract for OCR)
 RUN apt-get update && apt-get install -y --no-install-recommends \
