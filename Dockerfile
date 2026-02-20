@@ -31,6 +31,8 @@ RUN pip install --no-cache-dir pdf2image pytesseract python-dotenv groq gunicorn
 
 # Copy the backend code into the container
 COPY backend/ /app/backend/
+COPY ocr/ /app/ocr/
+COPY models/ /app/models/
 
 # Copy the Tesseract config files if needed (Optional depending on how OCR is being called)
 # If backend/ocr/text.py sets a static Windows path for Tesseract, we should override it to the standard Linux path: `/usr/bin/tesseract` via an env variable or sed later.
