@@ -7,13 +7,15 @@ import os, shutil, sys, re, joblib
 # Path setup
 # -------------------------------------------------
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BACKEND_DIR = os.path.join(BASE_DIR, "backend")
 sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, BACKEND_DIR)
 
 
 # -------------------------------------------------
 # Project imports
 # -------------------------------------------------
-from .ocr.text import extract_text
+from ocr.text import extract_text
 from .llm_service import generate_summary, negotiation_chat
 from .fairness import calculate_fairness_score
 from .vin_service import get_vehicle_details
