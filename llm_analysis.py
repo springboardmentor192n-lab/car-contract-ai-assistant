@@ -1,29 +1,32 @@
-import ollama
+from openai import OpenAI
+import os
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def analyze_with_llm(contract_text):
-    if not contract_text:
-        return "No text provided for analysis."
+
+    contract_text = contract_text[:4000]
 
     prompt = f"""
-    Analyze the following car lease contract text and extract the key terms:
-    - Monthly Payment
-    - Lease Term (months)
-    - Down Payment / Initial Payment
-    - Mileage Limit
-    - Residual Value
-    - Key Clauses (e.g., wear and tear, early termination)
+You are a legal AI assistant specializing in car lease agreements.
 
-    Contract Text:
-    {contract_text}
+Analyze the following contract and provide:
 
-    Format the output as a clear markdown summary.
-    """
+1. A short summary
+2. Key risks or problematic clauses
+3. Important financial terms
+4. Negotiation suggestions
 
-    try:
-        response = ollama.chat(
-            model="llama3",
-            messages=[{"role": "user", "content": prompt}]
-        )
-        return response["message"]["content"]
-    except Exception as e:
-        return f"Error during AI analysis: {str(e)}\n\n**Note:** Please ensure Ollama is installed and running on your system. You can download it from [ollama.com](https://ollama.com/download)."
+Contract:
+{contract_text}
+"""
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=500
+    )
+
+    return response.choices[0].message.content
