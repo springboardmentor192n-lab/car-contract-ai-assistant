@@ -1,7 +1,7 @@
 # 🚗 Car Lease AI Assistant
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Web_App-00C853?style=for-the-badge&logo=firebase)](https://carleaseai.web.app) 
-[![Backend API](https://img.shields.io/badge/Backend_API-Render-46E3B7?style=for-the-badge&logo=render)](https://car-lease-ai-backend.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Web_App-00C853?style=for-the-badge&logo=firebase)](https://carleaseai.web.app/) 
+[![Backend API](https://img.shields.io/badge/Backend_API-Render-46E3B7?style=for-the-badge&logo=render)](https://car-lease-ai-backend.onrender.com/)
 
 **Car Lease AI Assistant** is a comprehensive, AI-powered fintech application designed to help everyday car buyers understand, analyze, and negotiate complex lease and loan contracts.
 
@@ -59,8 +59,8 @@ By leveraging advanced OCR, Machine Learning classification, and Large Language 
 
 ## 🚀 Live Demo
 
-*   **Frontend Web App**: [https://carleaseai.web.app](https://carleaseai.web.app)
-*   **Backend API Base**: `https://car-lease-ai-backend.onrender.com`
+*   **Frontend Web App**: [https://carleaseai.web.app/](https://carleaseai.web.app/)
+*   **Backend API Base**: `https://car-lease-ai-backend.onrender.com/`
 
 > **Note on Free Hosting**: The backend is hosted on a Render free tier instance. It may take up to **50 seconds to wake up** if it has been inactive for 15 minutes. Please be patient on the first contract upload!
 
