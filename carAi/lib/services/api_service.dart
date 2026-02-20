@@ -7,8 +7,7 @@ class ApiService {
   static final String _prodUrl = 'https://car-lease-ai-backend.onrender.com';
   
   // Use _prodUrl for deployment, _devUrl for local testing
-  // In a real app we'd use intl/env vars e.g. const bool.fromEnvironment('dart.vm.product')
-  static String get baseUrl => const bool.fromEnvironment('dart.vm.product') ? _prodUrl : _devUrl;
+  static String get baseUrl => _devUrl;
   
   final Dio _dio = Dio(BaseOptions(
     baseUrl: baseUrl,
