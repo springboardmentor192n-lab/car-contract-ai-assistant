@@ -28,7 +28,7 @@ This project demonstrates the practical integration of *OCR, NLP, LLMs, APIs, an
 
 - *Python*
 - *Streamlit* – Web UI
-- *pdfplumber* – OCR for PDF text extraction
+- *pdfplumber* – Text extraction from digital PDFs
 - *Regular Expressions (Regex)* – VIN extraction
 - *NHTSA Vehicle API*– Vehicle data lookup
 - *Ollama (LLM)* – AI analysis and chatbot
@@ -77,6 +77,21 @@ streamlit run app.py
 5️⃣ Open in Browser
 
 http://localhost:8501
+
+---
+
+🌐 Deployment
+
+This project uses a locally hosted Large Language Model via Ollama.
+
+The application runs locally and can be accessed at:
+
+http://localhost:8501
+
+Ensure Ollama server is running before launching the Streamlit app.
+
+---
+
 🧪 Sample Use Cases
 Understanding penalties for late payments
 Identifying lease duration and obligations
@@ -93,6 +108,25 @@ Clause-level risk scoring
 Multi-language contract analysis
 Cloud deployment (AWS / GCP)
 Contract comparison feature
+
+---
+
+ 📸 Demo Screenshots
+
+### OCR Extraction Output
+![OCR Output](assets/Screenshot%202026-02-20%20191258.png)
+
+### VIN Detection & Vehicle Validation
+![VIN Validation](assets/Screenshot%202026-02-20%20191318.png)
+
+### AI Contract Analysis
+![LLM Analysis](assets/Screenshot%202026-02-20%20191356.png)
+
+### Contract Q&A Chatbot
+![Chatbot](assets/Screenshot%202026-02-20%20191419.png)
+
+---
+
 👩‍💻 Author
 Darpana Khaspa
 AI/ML Intern - Infosys Springboard Program
