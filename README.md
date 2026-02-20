@@ -1,5 +1,8 @@
 # 🚗 Car Lease AI Assistant
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Web_App-00C853?style=for-the-badge&logo=firebase)](https://carleaseai.web.app) 
+[![Backend API](https://img.shields.io/badge/Backend_API-Render-46E3B7?style=for-the-badge&logo=render)](https://car-lease-ai-backend.onrender.com)
+
 **Car Lease AI Assistant** is a comprehensive, AI-powered fintech application designed to help everyday car buyers understand, analyze, and negotiate complex lease and loan contracts.
 
 By leveraging advanced OCR, Machine Learning classification, and Large Language Models, this application instantly identifies "gotchas" in dealer contracts, calculates fairness scores based on current market rates, and provides an interactive AI Negotiation assistant to help users secure better terms.
