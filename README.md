@@ -40,6 +40,25 @@ Working demo deployed on Vercel:
 
 
 
+  ## 📸 Application Screenshots
+
+### 🏠 Home Page
+![Home Page](home.png)
+
+### 📂 Upload Page
+![Upload Page](upload.png)
+
+### 📊 Analysis Output
+![Analysis](analysis.png)
+
+### 📈 Fairness Score
+![Score](score.png)
+
+### 📄 Download Report
+![Report](report.png)
+
+
+
 ## ⚙️ Features
 
 * Upload car lease contract (.docx)
@@ -97,4 +116,3 @@ This project demonstrates full-stack development, API integration, database mana
 
 
 
-If you want, I can also give you a **short academic-style documentation (3–4 pages format)** for submission.
