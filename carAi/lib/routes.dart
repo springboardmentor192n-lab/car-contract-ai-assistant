@@ -5,11 +5,23 @@ import 'screens/contract_analysis_screen.dart';
 import 'screens/vin_report_screen.dart';
 import 'screens/negotiation_chat_screen.dart';
 import 'screens/history_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/signup_screen.dart';
 import 'models/contract_analysis_response.dart';
 
 final goRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/login',
   routes: [
+    GoRoute(
+      path: '/login',
+      name: 'login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/signup',
+      name: 'signup',
+      builder: (context, state) => const SignupScreen(),
+    ),
     GoRoute(
       path: '/',
       name: 'home',

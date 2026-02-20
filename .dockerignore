@@ -1,0 +1,19 @@
+# .dockerignore
+.venv/
+__pycache__/
+*.pyc
+.env
+.git/
+.gitignore
+.vscode/
+
+# Frontend (Not needed in Backend container)
+carAi/
+
+# Output and temp files
+output.json
+output.txt
+data/
+
+# Windows specific
+poppler/

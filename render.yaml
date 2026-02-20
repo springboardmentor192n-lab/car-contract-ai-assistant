@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: car-lease-ai-backend
+    env: docker
+    plan: free
+    dockerCommand: gunicorn backend.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:$PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false # Requires manual entry in Render dashboard
+      - key: PORT
+        value: 8000
