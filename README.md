@@ -14,13 +14,29 @@ The system extracts key financial details, evaluates fairness, and generates a d
 Deployed on Render using Python FastAPI and SQLite database:
 👉 [https://car-contract-ai.onrender.com/](https://car-contract-ai.onrender.com/)
 
-### 🔹 Frontend (React – Vercel)
+
+### 🔹 Demo Live Link (React – Vercel)
 
 Working demo deployed on Vercel:
 👉 [https://car-contract-ai-vayj.vercel.app/](https://car-contract-ai-vayj.vercel.app/)
 
-Demo Video:
-https://drive.google.com/file/d/1SwDXd_huy8Viypjd5Z8NyhULBYgzBEiE/view?usp=drive_link
+
+## 🎥 Demo Video
+▶️ [Watch Full Project Demo](https://drive.google.com/file/d/1SwDXd_huy8Viypjd5Z8NyhULBYgzBEiE/view?usp=drive_link)
+
+
+## 📸 Application Screenshots
+
+![Landing](./1.png)
+
+
+![Upload](./2.png)
+
+
+![Analysis](./3.png)
+
+
+![Score](./4.png)
 
 ## 🛠 Tech Stack
 
@@ -101,6 +117,3 @@ Source Code:
 
 Car Contract AI simplifies complex lease contracts by automating analysis and providing actionable insights.
 This project demonstrates full-stack development, API integration, database management, and cloud deployment skills.
-
-
-
