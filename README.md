@@ -19,6 +19,8 @@ Deployed on Render using Python FastAPI and SQLite database:
 Working demo deployed on Vercel:
 👉 [https://car-contract-ai-vayj.vercel.app/](https://car-contract-ai-vayj.vercel.app/)
 
+Demo Video:
+https://drive.google.com/file/d/1SwDXd_huy8Viypjd5Z8NyhULBYgzBEiE/view?usp=drive_link
 
 ## 🛠 Tech Stack
 
@@ -42,21 +44,7 @@ Working demo deployed on Vercel:
 
   ## 📸 Application Screenshots
 
-### 🏠 Home Page
-![Home Page](Screenshot 2026-02-20 204358.png)
-
-### 📂 Upload Page
-![Upload Page](upload.png)
-
-### 📊 Analysis Output
-![Analysis](analysis.png)
-
-### 📈 Fairness Score
-![Score](score.png)
-
-### 📄 Download Report
-![Report](report.png)
-
+![code](./Screenshot 2026-02-20 204358.png)
 
 
 ## ⚙️ Features
