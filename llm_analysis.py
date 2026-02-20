@@ -1,11 +1,11 @@
-from openai import OpenAI
+from groq import Groq
 import os
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def analyze_with_llm(contract_text):
 
-    contract_text = contract_text[:4000]
+    contract_text = contract_text[:3000]
 
     prompt = f"""
 You are a legal AI assistant specializing in car lease agreements.
@@ -22,11 +22,11 @@ Contract:
 """
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+    model="llama-3.1-8b-instant",
         messages=[
             {"role": "user", "content": prompt}
         ],
-        max_tokens=500
+        max_tokens=600,
     )
 
     return response.choices[0].message.content
