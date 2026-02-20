@@ -39,8 +39,6 @@ Before you begin, ensure you have the following installed:
     - *Windows*: [Download Installer](https://github.com/UB-Mannheim/tesseract/wiki)
     - *Mac*: `brew install tesseract`
     - *Linux*: `sudo apt-get install tesseract-ocr`
-## Demo Video
-[https://drive.google.com/file/d/1KHchHwjlIKp_maOsJEti7TdAcxjxMFLm/view?usp=drive_link](url)
 
 ## Screenshots
 <img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/0acf2a72-731b-490a-8a4c-e15f131bac8d" />
