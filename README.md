@@ -43,7 +43,7 @@ Working demo deployed on Vercel:
   ## 📸 Application Screenshots
 
 ### 🏠 Home Page
-![Home Page](home.png)
+![Home Page](Screenshot 2026-02-20 204358.png)
 
 ### 📂 Upload Page
 ![Upload Page](upload.png)
