@@ -82,13 +82,10 @@ http://localhost:8501
 
 🌐 Deployment
 
-This project uses a locally hosted Large Language Model via Ollama.
 
-The application runs locally and can be accessed at:
+The application is deployed on Streamlit Cloud and can be accessed using the link below:
 
-http://localhost:8501
-
-Ensure Ollama server is running before launching the Streamlit app.
+https://car-contract-ai-assistant-eydjo4wq3tvluaws6xxsu4.streamlit.app/
 
 ---
 
@@ -111,19 +108,11 @@ Contract comparison feature
 
 ---
 
-📸 Demo Screenshots
+🎥 Demo Video
 
-### OCR Extraction Output
-![OCR Output](assets/Screenshot%202026-02-20%20191258.png)
+Watch the full working demo here:
 
-### VIN Detection & Vehicle Validation
-![VIN Validation](assets/Screenshot%202026-02-20%20191318.png)
-
-### AI Contract Analysis
-![LLM Analysis](assets/Screenshot%202026-02-20%20191356.png)
-
-### Contract Q&A Chatbot
-![Chatbot](assets/Screenshot%202026-02-20%20191419.png)
+[Click to Watch Demo](assets/demo.mp4)
 
 ---
 

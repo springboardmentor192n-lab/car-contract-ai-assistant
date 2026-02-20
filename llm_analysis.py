@@ -3,9 +3,6 @@ import os
 
 api_key = os.getenv("GROQ_API_KEY")
 
-if not api_key:
-    raise ValueError("GROQ_API_KEY is not set in environment")
-
 client = Groq(api_key=api_key)
 
 def analyze_with_llm(contract_text):

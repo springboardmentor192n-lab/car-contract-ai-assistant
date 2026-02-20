@@ -1,9 +1,0 @@
-# Ignore PDF and image test files
-*.pdf
-*.jpg
-*.jpeg
-*.png
-
-# Ignore cache and environment files
-_pycache_/
-.env
