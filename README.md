@@ -90,6 +90,71 @@ CSS3
 
 Vanilla JavaScript (Fetch API)
 
+setup and requirements:
+
+1. System Requirements
+
+Python 3.9 or 3.10
+
+Minimum 8GB RAM recommended
+
+Active internet connection (required for Hugging Face API and NHTSA API access)
+
+2. Required External Tools
+
+The project uses OCR and PDF image processing. The following tools must be installed separately:
+
+Tesseract OCR
+
+Install Tesseract OCR from:
+https://github.com/tesseract-ocr/tesseract
+
+Ensure the installation directory is added to your system PATH.
+
+Poppler (Required for PDF Image Conversion)
+
+Install Poppler for your operating system and add it to PATH.
+This is required for processing scanned PDF documents.
+
+3. Clone the Repository
+git clone <your-repository-url>
+cd car-ai-assistant
+4. Create and Activate Virtual Environment
+python -m venv .venv
+
+Windows:
+
+.venv\Scripts\activate
+
+macOS/Linux:
+
+source .venv/bin/activate
+5. Install Project Dependencies:
+pip install -r requirements.txt,
+6. Configure Environment Variables
+
+Set your Hugging Face API token as an environment variable.
+
+Windows (PowerShell):
+
+setx HF_TOKEN "your_token_here"
+
+macOS/Linux:
+
+export HF_TOKEN="your_token_here"
+
+Restart your terminal after setting the variable.
+
+7. Run the Application
+
+python app.py
+
+Open the application in your browser:
+
+http://127.0.0.1:5000
+
+
+
 <img width="1863" height="938" alt="Screenshot 2026-02-19 112109" src="https://github.com/user-attachments/assets/82dff2b7-a3fe-49fe-b0db-0988cbef5746" />
 
 <img width="1869" height="914" alt="Screenshot 2026-02-19 112126" src="https://github.com/user-attachments/assets/38b02a5c-268a-4193-84a8-f90020f24ed5" />
