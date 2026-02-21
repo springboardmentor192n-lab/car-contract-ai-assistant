@@ -165,5 +165,14 @@ This produces a **Fairness Score (0–100)** shown in the dashboard to help user
 * Mobile app version
 
 ---
+**Screenshots**
+<img width="1919" height="659" alt="Screenshot 2026-02-21 220144" src="https://github.com/user-attachments/assets/d26ffd8b-2fbe-4f7d-9918-2703c7722922" />
+<img width="1916" height="684" alt="Screenshot 2026-02-21 220307" src="https://github.com/user-attachments/assets/965b3283-7c5b-45b3-948e-dca3bdfcb92a" />
+<img width="1919" height="671" alt="Screenshot 2026-02-21 220434" src="https://github.com/user-attachments/assets/15c0108b-2d7a-4c9e-b0b6-c683f81ebd01" />
+<img width="1919" height="661" alt="Screenshot 2026-02-21 220500" src="https://github.com/user-attachments/assets/8f76cf36-d1c7-4604-8b55-e0e9130dbcab" />
+<img width="1919" height="704" alt="Screenshot 2026-02-21 220709" src="https://github.com/user-attachments/assets/20b74e62-55c2-4342-a31c-923983cd0fbe" />
 
+---
 **AutoSLA — Making car contracts transparent using AI.** 🚗✨
+
+
