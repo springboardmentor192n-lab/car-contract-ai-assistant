@@ -1,6 +1,6 @@
 
 
-# 🚗 AI Based Car Contract Assistant
+# 🚗 Car Contract AI Assistant
 
 An AI-powered backend system that extracts, analyzes, and structures car contract information using LLMs, document parsing, and REST APIs.
 
@@ -269,4 +269,5 @@ This project is licensed under the MIT License.
 If you found this project helpful, please give it a ⭐ on GitHub!
 
 ---
+
 
