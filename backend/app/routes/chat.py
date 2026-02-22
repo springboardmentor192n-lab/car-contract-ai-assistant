@@ -20,6 +20,7 @@ def chat_with_contract(data: ChatRequest):
     prompt = build_chat_prompt(
         contract_sla=data.sla_data,
         user_question=data.question,
+        vehicle_details=data.vehicle,
         price_context=None,  # No longer providing mock price data
     )
 
