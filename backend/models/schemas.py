@@ -225,3 +225,9 @@ class ResponseModel(BaseModel):
     message: str
     data: Optional[Any] = None
 
+class ChatRequest(BaseModel):
+    message: str
+
+class ChatResponse(BaseModel):
+    response: str
+

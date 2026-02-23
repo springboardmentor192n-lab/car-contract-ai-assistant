@@ -99,7 +99,9 @@ class ContractAnalysisResultsDisplay extends ConsumerWidget {
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton.icon(
-                onPressed: null, // Disabled for now
+                onPressed: () {
+                  ref.read(contractAnalysisServiceProvider).downloadAnalysis(result);
+                },
                 icon: const Icon(Icons.download),
                 label: const Text('Download Analysis'),
                 style: ElevatedButton.styleFrom(
