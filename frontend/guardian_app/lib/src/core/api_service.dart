@@ -6,7 +6,7 @@ class ApiService {
 
   ApiService()
       : _dio = Dio(BaseOptions(
-          baseUrl: 'http://10.0.2.2:8000/api', // Replace with your API base URL
+          baseUrl: 'https://car-contract-ai-assistant.onrender.com/api', // Production API base URL
           connectTimeout: const Duration(milliseconds: 5000),
           receiveTimeout: const Duration(milliseconds: 3000),
         )) {

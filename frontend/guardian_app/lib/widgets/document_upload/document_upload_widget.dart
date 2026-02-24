@@ -76,12 +76,14 @@ class DocumentUploadWidget extends ConsumerWidget {
   }
 
   Widget _buildDropzone(BuildContext context, WidgetRef ref) {
-    return DottedBorder(
-      color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
-      strokeWidth: 2,
-      dashPattern: const [8, 4],
-      borderType: BorderType.RRect,
-      radius: const Radius.circular(12),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+          width: 2,
+        ),
+      ),
       child: InkWell(
         onTap: () => _pickAndUploadFile(context, ref),
         borderRadius: BorderRadius.circular(12),

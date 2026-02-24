@@ -24,14 +24,30 @@ This project is a Flutter application. To run this project, you will need to hav
 flutter run
 ```
 
+## Responsive Architecture
+
+This project has been refactored into a scalable, production-ready responsive architecture.
+
+- **Responsive Scaffolding**: Uses `ResponsiveLayout` and `ResponsiveScaffold` to adapt between Mobile, Tablet, and Desktop views.
+- **Components**:
+  - `AppSidebar`: Collapsible sidebar for desktop.
+  - `MobileNav`: Drawer and Bottom Navigation for mobile.
+  - `AppCard` & `ResponsiveGrid`: Reusable UI components.
+- **State Management**: Uses Riverpod for dependency injection and state management (`AppStateProvider` handles UI state like theme and sidebar).
+- **Theming**: comprehensive `AppTheme` with light and dark mode support.
+
 ## Project Structure
 
-The project follows a clean architecture with a feature-based folder structure.
-
-- `lib/src/features`: Contains the different features of the application.
-- `lib/src/shared`: Contains shared widgets, models, and services.
-- `lib/src/config`: Contains the app configuration, such as theme and routing.
-- `lib/src/core`: Contains the core functionalities of the application, such as the API service.
+- `lib/core`: Constants, Theme, and Utilities.
+- `lib/screens`: Screen implementations (responsive wrappers).
+- `lib/widgets`:
+  - `responsive`: Layout widgets (`ResponsiveLayout`, `ResponsiveScaffold`).
+  - `navigation`: Sidebar, Mobile Nav.
+  - `common`: Reusable widgets (Cards, Grids).
+  - `dashboard`, `market`, `vin_validation`: Feature-specific widgets.
+- `lib/providers`: Riverpod providers.
+- `lib/models`: Data models.
+- `lib/services`: API and business logic services.
 
 ## Built With
 

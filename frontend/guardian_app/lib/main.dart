@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_router.dart';
 import 'core/theme.dart';
+import 'providers/app_state_provider.dart';
 
 void main() {
   runApp(
-    // ProviderScope is needed for Riverpod to work
     const ProviderScope(
       child: MyApp(),
     ),
@@ -18,13 +18,15 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Access the GoRouter instance from app_router.dart
     final router = appRouter;
+    final themeMode = ref.watch(appStateProvider).themeMode;
 
     return MaterialApp.router(
       title: 'Autofinance Guardian',
-      theme: appTheme, // Apply the custom Material 3 theme
-      routerConfig: router, // Use go_router for navigation
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: themeMode,
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
     );
   }

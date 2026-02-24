@@ -99,7 +99,9 @@ class ContractAnalysisResultsDisplay extends ConsumerWidget {
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton.icon(
-                onPressed: null, // Disabled for now
+                onPressed: () {
+                  ref.read(contractAnalysisServiceProvider).downloadAnalysis(result);
+                },
                 icon: const Icon(Icons.download),
                 label: const Text('Download Analysis'),
                 style: ElevatedButton.styleFrom(
@@ -230,7 +232,7 @@ class ContractAnalysisResultsDisplay extends ConsumerWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+              color: Theme.of(context).colorScheme.surface.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(summary, style: Theme.of(context).textTheme.bodyLarge),

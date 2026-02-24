@@ -4,10 +4,11 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
 import '../core/config.dart';
-import 'api_service.dart'; // Reusing the existing ApiService
+import 'api_service.dart';
+import 'web_download_helper.dart';
 
-/// Represents the structured result of a contract document analysis.
 class DocumentContractAnalysisResult {
   final String fileName;
   final String riskLevel;
@@ -37,74 +38,107 @@ class DocumentContractAnalysisResult {
   }
 }
 
-/// Service for handling contract document uploads and their AI analysis.
 class ContractAnalysisService {
-  final ApiService _apiService; // Can be used for other API calls if needed
+  final ApiService _apiService;
 
   ContractAnalysisService(this._apiService);
 
-  /// Uploads a contract document for AI analysis and returns the structured result.
+  MediaType _getMediaType(String fileName) {
+    final ext = fileName.split('.').last.toLowerCase();
+    switch (ext) {
+      case 'pdf': return MediaType('application', 'pdf');
+      case 'doc': return MediaType('application', 'msword');
+      case 'docx': return MediaType('application', 'vnd.openxmlformats-officedocument.wordprocessingml.document');
+      case 'png': return MediaType('image', 'png');
+      case 'jpg':
+      case 'jpeg': return MediaType('image', 'jpeg');
+      case 'txt': return MediaType('text', 'plain');
+      default: return MediaType('application', 'octet-stream');
+    }
+  }
+
   Future<DocumentContractAnalysisResult> analyzeContract({
     required String fileName,
     required Uint8List fileBytes,
   }) async {
-    final uri = Uri.parse('${AppConfig.baseUrl}/analyze_contract'); // Backend endpoint
-    var request = http.MultipartRequest('POST', uri)
-      ..files.add(http.MultipartFile.fromBytes(
-        'file', // Field name for the file on the backend
-        fileBytes,
-        filename: fileName,
-      ));
+    final uri = Uri.parse('${AppConfig.baseUrl}/analyze_contract');
+    
+    int retryCount = 0;
+    while (true) {
+      try {
+        if (kDebugMode) {
+          print('Uploading $fileName to $uri (Attempt ${retryCount + 1})');
+        }
+
+        final request = http.MultipartRequest('POST', uri);
+        
+        // Add file with proper MediaType
+        request.files.add(http.MultipartFile.fromBytes(
+          'file',
+          fileBytes,
+          filename: fileName,
+          contentType: _getMediaType(fileName),
+        ));
+
+        // Add standard headers
+        request.headers.addAll({
+          'Accept': 'application/json',
+        });
+
+        final streamedResponse = await request.send().timeout(AppConfig.timeoutDuration);
+        final response = await http.Response.fromStream(streamedResponse);
+
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          final jsonResponse = json.decode(response.body);
+          return DocumentContractAnalysisResult.fromJson(jsonResponse);
+        } else {
+          throw ApiException(
+            'Server error (${response.statusCode}): ${response.body}',
+            statusCode: response.statusCode
+          );
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print('Upload error: $e');
+        }
+
+        bool isNetworkError = e is http.ClientException || e is TimeoutException || e.toString().contains('Failed to fetch');
+        
+        if (retryCount < AppConfig.retryCount && isNetworkError) {
+          retryCount++;
+          await Future.delayed(AppConfig.retryDelay);
+          continue;
+        }
+        
+        if (e is TimeoutException) {
+          throw ApiException('Analysis request timed out. The server might be busy or starting up.');
+        }
+        if (e.toString().contains('Failed to fetch')) {
+          throw ApiException('Connection failed. This might be a CORS issue or the server is down.');
+        }
+        throw ApiException('Network error: ${e.toString()}');
+      }
+    }
+  }
+
+  Future<void> downloadAnalysis(DocumentContractAnalysisResult result) async {
+    // Encode query parameters properly for the GET request
+    final queryParams = {
+      'risk_level': result.riskLevel,
+      'summary': result.summary,
+      'penalties': result.penalties.join('\n'),
+    };
+    
+    final uri = Uri.parse('${AppConfig.baseUrl}/download-analysis').replace(queryParameters: queryParams);
 
     try {
       if (kDebugMode) {
-        print('Attempting to upload contract for analysis: $fileName to $uri');
+        print('Triggering PDF download: $uri');
       }
-      final response = await request.send();
-
-      if (response.statusCode >= 200 && response.statusCode < 300) {
-        final responseBody = await response.stream.bytesToString();
-        if (kDebugMode) {
-          print('Contract analysis upload successful. Response body: $responseBody');
-        }
-
-        if (responseBody.isNotEmpty) {
-          try {
-            final jsonResponse = json.decode(responseBody);
-            // Assuming backend returns a JSON with the structured analysis result
-            return DocumentContractAnalysisResult.fromJson(jsonResponse);
-          } catch (e) {
-            if (kDebugMode) {
-              print('Failed to parse contract analysis response JSON: $e');
-            }
-            // If response is not JSON, treat body as a generic error or summary
-            return DocumentContractAnalysisResult(
-                fileName: fileName,
-                riskLevel: 'Error',
-                summary: 'Failed to parse analysis: $responseBody');
-          }
-        }
-        return DocumentContractAnalysisResult(fileName: fileName, summary: 'No analysis content received.');
-      } else {
-        final errorBody = await response.stream.bytesToString();
-        String errorMessage = 'Failed to analyze contract. Status: ${response.statusCode}';
-        if (errorBody.isNotEmpty) {
-          errorMessage += ' Body: $errorBody';
-        }
-        throw ApiException(errorMessage, statusCode: response.statusCode);
-      }
-    } on http.ClientException catch (e) {
-      if (kDebugMode) {
-        print('HTTP Client Error during contract analysis upload: $e');
-      }
-      throw ApiException('Network error or connection failed during upload: ${e.message}');
-    } on ApiException {
-      rethrow;
+      // Use the web-safe conditional download helper
+      downloadFile(uri.toString(), 'Contract_Analysis.pdf');
     } catch (e) {
-      if (kDebugMode) {
-        print('Contract Analysis Service Error: $e');
-      }
-      throw ApiException('An unexpected error occurred during contract analysis: ${e.toString()}');
+      throw ApiException('Failed to start download: $e');
     }
   }
 }

@@ -1,8 +1,7 @@
 // frontend/guardian_app/lib/models/user.dart
-import 'package:uuid/uuid.dart';
 
 class User {
-  final Uuid id;
+  final String id;
   final String username;
   final String email;
   final bool isActive;
@@ -20,18 +19,18 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: Uuid.parse(json['id']),
-      username: json['username'],
-      email: json['email'],
-      isActive: json['is_active'],
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      id: json['id'] as String? ?? '',
+      username: json['username'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      isActive: json['is_active'] as bool? ?? false,
+      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : DateTime.now(),
+      updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at']) : DateTime.now(),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id.toString(),
+      'id': id,
       'username': username,
       'email': email,
       'is_active': isActive,

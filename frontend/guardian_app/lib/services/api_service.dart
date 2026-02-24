@@ -31,7 +31,9 @@ class ApiService {
     Map<String, String>? headers,
     int retryCount = AppConfig.retryCount,
   }) async {
-    Uri uri = Uri.parse('$baseUrl$endpoint');
+    final String cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl;
+    final String cleanEndpoint = endpoint.startsWith('/') ? endpoint : '/$endpoint';
+    Uri uri = Uri.parse('$cleanBaseUrl$cleanEndpoint');
     http.Response? response;
     int currentRetry = 0;
 

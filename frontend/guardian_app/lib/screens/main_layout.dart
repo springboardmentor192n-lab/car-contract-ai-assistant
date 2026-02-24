@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/chatbot_provider.dart';
-import '../widgets/navigation/side_nav_rail.dart';
+import '../widgets/responsive/responsive_scaffold.dart';
 import '../widgets/chatbot/chatbot_button.dart';
 import '../widgets/chatbot/chatbot_ui.dart';
 
@@ -102,31 +102,30 @@ void didChangeDependencies() {
       }
     });
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Autofinance Guardian'),
-      ),
-      body: Row(
-        children: [
-          SideNavRail(
-            selectedIndex: _selectedIndex,
-            onDestinationSelected: (index) {
-              if (index == 0) {
-                context.go('/');
-              } else if (index == 1) {
-                context.go('/market_rates');
-              } else if (index == 2) {
-                context.go('/vin-lookup');
-              } else if (index == 3) { // New index for Contract Analysis
-                context.go('/contract_analysis');
-              }
-            },
+        return ResponsiveScaffold(
+          selectedIndex: _selectedIndex,
+          onDestinationSelected: (index) {
+            if (index == 0) {
+              context.go('/');
+            } else if (index == 1) {
+              context.go('/market_rates');
+            } else if (index == 2) {
+              context.go('/vin-lookup');
+            } else if (index == 3) {
+              context.go('/contract_analysis');
+            }
+          },
+          body: Stack(
+            children: [
+              widget.child,
+              const Positioned(
+                bottom: 16,
+                right: 16,
+                child: ChatbotButton(),
+              ),
+            ],
           ),
-          const VerticalDivider(thickness: 1, width: 1),
-          Expanded(child: widget.child),
-        ],
-      ),
-      floatingActionButton: const ChatbotButton(),
-    );
-  }
-}
+        );
+      }
+    }
+    

@@ -16,7 +16,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=True,   # ✅ conflict resolved
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -35,33 +35,29 @@ class ContractAnalysisResponse(BaseModel):
 
 @app.post("/analyze_contract", response_model=ContractAnalysisResponse)
 async def analyze_contract(file: UploadFile = File(...)):
-    # Read file content
     file_content = await file.read()
-    
-    # Simulate long processing time (async-safe)
-    await asyncio.sleep(5) 
+    await asyncio.sleep(5)
 
-    # Mock logic based on filename
     file_name_lower = file.filename.lower()
     if "bad" in file_name_lower or "highrisk" in file_name_lower:
         risk_level = "High"
         hidden_fees = ["Excessive late payment fee (5%)", "Undisclosed administration charges ($150)"]
         penalties = ["Early termination fee = 3 months payments", "High interest rate increase on default"]
         unfair_clauses = ["Lender can unilaterally change terms", "Arbitration clause favors lender"]
-        summary = "This contract contains several high-risk clauses, including unilateral term changes and high hidden fees. Proceed with extreme caution and seek legal advice."
+        summary = "This contract contains several high-risk clauses. Proceed with extreme caution."
     elif "medium" in file_name_lower:
         risk_level = "Medium"
         hidden_fees = ["Minor documentation fee ($25)"]
         penalties = ["Standard late payment fee ($35)"]
         unfair_clauses = []
-        summary = "The contract has a few areas for review, but overall appears manageable. Pay attention to documentation fees and standard penalties."
+        summary = "The contract has a few areas for review."
     else:
         risk_level = "Low"
         hidden_fees = []
         penalties = ["Standard late payment fee ($30)"]
         unfair_clauses = []
-        summary = "This contract appears to have fair and standard terms. The only penalty noted is for late payments, which is common. This is a low-risk agreement."
-    
+        summary = "This contract appears fair and low-risk."
+
     return ContractAnalysisResponse(
         file_name=file.filename,
         risk_level=risk_level,
@@ -77,14 +73,12 @@ async def download_analysis(
     summary: str = "No analysis provided.",
     penalties: str = "None"
 ):
-    """Generates and returns a PDF analysis report."""
     try:
         buffer = io.BytesIO()
         doc = SimpleDocTemplate(buffer, pagesize=letter)
         styles = getSampleStyleSheet()
         story = []
 
-        # Title
         title_style = ParagraphStyle(
             'TitleStyle',
             parent=styles['Heading1'],
@@ -94,37 +88,20 @@ async def download_analysis(
         story.append(Paragraph("Contract Analysis Report", title_style))
         story.append(Spacer(1, 12))
 
-        # Risk Level
         risk_color = "red" if risk_level.lower() == "high" else ("orange" if risk_level.lower() == "medium" else "green")
         story.append(Paragraph(f"<b>Risk Level:</b> <font color='{risk_color}'>{risk_level.upper()}</font>", styles['Normal']))
         story.append(Spacer(1, 12))
 
-        # Timestamp
         story.append(Paragraph(f"<b>Generated On:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
         story.append(Spacer(1, 12))
 
-        # Summary
         story.append(Paragraph("<b>AI Analysis Summary:</b>", styles['Heading2']))
         story.append(Paragraph(summary.replace('\n', '<br/>'), styles['Normal']))
         story.append(Spacer(1, 12))
 
-        # Penalties
         story.append(Paragraph("<b>Identified Penalties:</b>", styles['Heading2']))
         story.append(Paragraph(penalties.replace('\n', '<br/>'), styles['Normal']))
         story.append(Spacer(1, 12))
-
-        # Recommended Actions
-        story.append(Paragraph("<b>Recommended Actions:</b>", styles['Heading2']))
-        actions = []
-        if risk_level.lower() == "high":
-            actions = ["Do not sign immediately.", "Seek legal counsel.", "Negotiate high-risk clauses."]
-        elif risk_level.lower() == "medium":
-            actions = ["Review highlighted terms.", "Ask lender for clarification.", "Compare with other offers."]
-        else:
-            actions = ["Standard review recommended.", "Ensure all verbal promises are in writing.", "Keep a copy for records."]
-        
-        for action in actions:
-            story.append(Paragraph(f"• {action}", styles['Normal']))
 
         doc.build(story)
         pdf_value = buffer.getvalue()
@@ -138,5 +115,4 @@ async def download_analysis(
             }
         )
     except Exception as e:
-        print(f"Download error: {e}")
         raise HTTPException(status_code=500, detail=str(e))

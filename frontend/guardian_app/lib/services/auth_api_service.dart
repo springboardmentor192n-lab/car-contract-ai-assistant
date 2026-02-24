@@ -6,7 +6,7 @@ import 'package:guardian_app/models/token.dart';
 
 class AuthApiService {
   // Replace with your FastAPI backend URL
-  static const String _baseUrl = 'http://localhost:8000'; 
+  static const String _baseUrl = 'https://car-contract-ai-assistant.onrender.com'; 
 
   Future<User> register({
     required String username,
